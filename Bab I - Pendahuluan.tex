@@ -15,26 +15,75 @@ Smart Canteen yang ideal membutuhkan sistem pemantauan kondisi makanan yang obje
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
-Rumusan Masalah berisi masalah utama yang dibahas dalam tugas akhir. Rumusan masalah yang baik memiliki struktur sebagai berikut:
+
+Penelitian ini berfokus untuk mengembangkan model \textit{machine learning} berbasis sensor gas MQ yang mampu mengklasifikasikan makanan sebagai \textit{fresh} atau \textit{spoiled} secara objektif.
+
+Rumusan masalah penelitian adalah sebagai berikut:
+
 \begin{enumerate}
-\item	Pokok persoalan dari kondisi atau situasi yang ada saat ini. Dengan kata lain, jelaskan kelemahan atau kekurangan dari kondisi, situasi, atau solusi yang dijelaskan pada latar belakang. Ini merupakan pokok rumusan masalah.
-\item	Elaborasi lebih lanjut urgensi penyelesaian masalah tersebut (mengapa penting untuk diselesaikan dan akibat yang dapat terjadi jika tidak diselesaikan).
-\item	Usulan singkat terkait dengan solusi yang ditawarkan untuk menyelesaikan persoalan.
-Penting untuk diperhatikan bahwa persoalan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di bab Evaluasi (apakah terselesaikan atau tidak).
+\item	Bagaimana mendeteksi tingkat kesegaran makanan secara objektif tanpa inspeksi manual pada lingkungan Smart Canteen?
+
+\item	Bagaimana membangun dan mengevaluasi model \textit{machine learning} yang mampu mengklasifikasikan makanan ke dalam alur \textit{fresh} atau \textit{spoiled} berdasarkan data gas dari sensor MQ?
+
+\item	Bagaimana mengintegrasikan hasil klasifikasi kesegaran makanan ke dalam alur Food Waste Management untuk mendukung keputusan \textit{storing}, \textit{donation}, dan \textit{disposal}?
 \end{enumerate}
 
 % --- Tujuan ---
 \section{Tujuan}
-Tuliskan tujuan utama dan/atau tujuan detail yang akan dicapai dalam pelaksanaan tugas akhir. Fokuskan pada hasil akhir yang ingin diperoleh setelah tugas akhir diselesaikan, terkait dengan penyelesaian persoalan pada rumusan masalah. Penting untuk diperhatikan bahwa tujuan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di akhir pelaksanaan tugas akhir apakah tercapai atau tidak. Tuliskan kriteria keberhasilan tugas akhir ini.
+
+Tujuan penelitian ini adalah:
+
+\begin{enumerate}
+\item	Mengembangkan sistem pemantauan kesegaran makanan berbasis \textit{multi-gas sensor} MQ yang mampu mengukur kondisi makanan secara objektif.
+
+\item	Membangun dan mengevaluasi model \textit{machine learning} yang dapat mengklasifikasikan makanan \textit{fresh} atau \textit{spoiled} berdasarkan data sensor gas dari sensor MQ.
+
+\item	Merancang integrasi hasil klasifikasi ke dalam \textit{workflow} Smart Canteen untuk mendukung keputusan pada proses \textit{storing}, \textit{donation}, dan \textit{disposal}.
+\end{enumerate}
 
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
-Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+
+Penelitian ini memiliki batasan-batasan sebagai berikut:
+
+\begin{enumerate}
+\item	Penelitian ini hanya berfokus pada klasifikasi dua kondisi makanan, yaitu \textit{fresh} dan \textit{spoiled}, tanpa mencakup kategori \textit{intermediate} seperti \textit{almost spoiled} atau penilaian tingkat kerusakan.
+
+\item	Data yang digunakan berasal dari pembacaan \textit{multi-gas sensor} MQ (MQ8, MQ135, MQ4, MQ9, MQ2, MQ3) dalam bentuk nilai \textit{analog} digital, tanpa melibatkan data visual, aroma manusia, suhu, kelembapan, atau sensor IoT tambahan lainnya.
+
+\item	Model \textit{machine learning} yang dibangun hanya bertujuan mendeteksi kondisi makanan berdasarkan pola gas, tanpa mencakup penjelasan penyebab kerusakan, prediksi waktu kadaluarsa, atau estimasi \textit{shelf-life}.
+
+\item	Integrasi sistem dengan \textit{workflow} Smart Canteen dibatasi pada rekomendasi keputusan (\textit{storing}, \textit{donation}, \textit{disposal}), tanpa mencakup implementasi penuh pada sistem operasional atau perangkat keras kantin.
+
+\item	Pengujian sistem dilakukan menggunakan \textit{dataset} hasil eksperimen sensor yang tersedia, tanpa melakukan pengujian skala besar pada kondisi kantin nyata ataupun \textit{dataset} resmi dari FAO.
+\end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
-\begin{enumerate}
-\item	Tahapan investigasi pengumpulan fakta di latar belakang untuk merumuskan masalah.
-\item	Langkah-langkah pencarian, pengelompokan, dan penapisan literatur atau sumber informasi untuk mengumpulkan informasi yang relevan tentang topik yang diangkat, termasuk teori (konsep atau teori apa saja yang perlu dicari), hal-hal yang telah dicapai oleh orang lain (cara mencari dan kata kuncinya), dan berbagai informasi pendukung, untuk mencari solusi terhadap masalah yang dibahas. Gunakan metodologi yang tepat dalam menggali informasi dan dokumentasikan prosesnya (termasuk rekaman wawancara atau survei) di dalam Lampiran, termasuk tautan ke video atau foto. Hasil penggalian informasi ini akan dijelaskan secara sistematis di Bab II Studi Literatur.
-\end{enumerate}
+
+Metode yang akan dipilih dalam penelitian ini adalah CRISP-DM (\textit{Cross Industry Standard Process for Data Mining}) sebagai berikut:
+
+\subsection{Fase 1: Understanding (\textit{Pemahaman})}
+
+\subsubsection{\textit{Business Understanding}}
+Identifikasi permasalahan \textit{food spoilage} dalam Smart Canteen dan kebutuhan sistem pemantauan kesegaran makanan yang objektif berbasis sensor gas.
+
+\subsubsection{\textit{Data Understanding}}
+Eksplorasi \textit{dataset} sensor MQ yang mencakup pembacaan sinyal gas pada makanan dalam kondisi \textit{fresh} dan \textit{spoiled}, termasuk analisis karakteristik data dan distribusinya.
+
+\subsection{Fase 2: Preparation \& Modelling (\textit{Persiapan dan Pemodelan})}
+
+\subsubsection{\textit{Data Preparation}}
+Melakukan \textit{filtering}, \textit{transform}, penyesuaian data, \textit{splitting} data pelatihan dan pengujian, serta pemilihan fitur yang relevan dari pembacaan sensor MQ.
+
+\subsubsection{\textit{Data Modelling}}
+Membangun model klasifikasi menggunakan Logistic Regression, Random Forest, Decision Tree, dan KNN untuk mengklasifikasikan makanan sebagai \textit{fresh} atau \textit{spoiled} berdasarkan data sensor.
+
+\subsection{Fase 3: Evaluating (\textit{Evaluasi})}
+
+\subsubsection{\textit{Data Evaluation}}
+Mengevaluasi performa model menggunakan metrik \textit{Accuracy}, \textit{Precision}, \textit{Recall}, \textit{F1-Score}, \textit{Confusion Matrix}, dan \textit{Cross-Validation}.
+
+\vspace{0.5cm}
+
+CRISP-DM cocok digunakan dalam penelitian ini karena metodologinya memberikan alur kerja yang terstruktur mulai dari pemahaman kebutuhan bisnis hingga evaluasi model.
