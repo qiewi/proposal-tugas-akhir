@@ -1,0 +1,53 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.pdf
+*.dvi
+*.ps
+
+# LaTeX temporary files
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.bak
+*.swp
+*~
+
+# BibTeX
+*.bib.bak
+*.bib.sav
+
+# Glossaries
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+
+# Indices
+*.idx
+*.ilg
+*.ind
+
+# Hyperref
+*.xref
+
+# Others
+*.gz(busy)
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
