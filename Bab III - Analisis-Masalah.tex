@@ -7,18 +7,81 @@
 \chapter{ANALISIS MASALAH}
 \label{chap:analisis-masalah}
 \section{Analisis Kondisi Saat Ini}
-Menurut \textcite{laudon2020}, gambarkan terlebih dahulu model konseptual sistem yang ada saat ini. Model konseptual ini berisi berbagai komponen atau subsitem dan interaksi antarsubsistem tersebut. Setelah itu, berikan penjelasan tentang masalah yang ada pada sistem tersebut. Paragraf berikut berisi contoh penjabaran masalah sistem informasi fasilitas kesehatan untuk pasien \autocite{pressman2019}. 
+Proses bisnis pada sistem \textit{smart canteen} secara umum terbagi ke dalam empat fase utama, yaitu \textit{ordering}, \textit{preparing}, \textit{dining}, dan \textit{post-dining}, seperti ditunjukkan pada Gambar \ref{gambar:smart-canteen-proses}. Setiap fase telah dilengkapi dengan alur digital yang mendukung efisiensi, mulai dari pemesanan melalui aplikasi atau kiosk, pengelolaan menu dan inventori oleh vendor, hingga sistem pengambilan makanan dan area makan yang terintegrasi.
+
+\begin{figure}[h]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.8\textwidth]{image/Smart Canteen Proses Bisnis.png}
+	\caption{Proses bisnis Smart Canteen}
+	\label{gambar:smart-canteen-proses}
+\end{figure}
+
+Namun, pada fase \textit{post-dining}, teknologi pendukung \textit{food waste management} masih belum optimal. Saat ini belum tersedia mekanisme otomatis yang mampu menilai kualitas atau kesegaran makanan sisa, sehingga keputusan seperti menyimpan, mendonasikan, atau membuang makanan sepenuhnya bergantung pada penilaian manual. 
+
+Para pengelola dan penjual masih mengandalkan indra penciuman, observasi visual, dan \textit{feeling} pribadi untuk menentukan apakah makanan masih layak konsumsi pada hari berikutnya. Praktik ini tidak hanya rentan terhadap subjektivitas dan kesalahan, tetapi juga meningkatkan risiko keamanan pangan serta dapat menghambat pengambilan keputusan yang tepat dalam pengelolaan limbah makanan. Kondisi ini menunjukkan perlunya fitur pendukung yang lebih objektif dan terukur untuk membantu proses evaluasi kesegaran makanan dalam konteks \textit{smart canteen} modern.
+
 \section{Analisis Kebutuhan}
-\lipsum[4]
+Berdasarkan analisis kondisi \textit{smart canteen} saat ini, terdapat kebutuhan penting untuk menghadirkan mekanisme pemantauan kualitas makanan yang lebih objektif, terstandarisasi, dan mengurangi ketergantungan pada inspeksi manual. Proses penentuan kesegaran makanan—khususnya setelah fase penyajian (\textit{post-dining})—masih bergantung pada persepsi subjektif seperti penciuman dan pengalaman pribadi penjual. Metode ini berisiko menimbulkan kesalahan penilaian, tidak konsisten antar individu, serta tidak memenuhi standar keamanan pangan nasional maupun global (misalnya prinsip \textit{Codex Alimentarius} dan HACCP).
+
+Oleh karena itu, \textit{smart canteen} memerlukan sistem yang mampu memberikan data ilmiah dan terukur untuk mendeteksi indikasi pembusukan makanan secara dini. Sistem tersebut harus mampu:
+
+\begin{enumerate}
+	\item Mengidentifikasi perubahan kualitas makanan melalui indikator yang reliabel, seperti emisi gas pembusukan dari makanan sisa.
+
+	\item Menghasilkan keputusan berbasis data untuk menentukan apakah makanan masih layak disimpan, didonasikan, atau harus dibuang dalam alur \textit{food waste management}.
+
+	\item Menjamin keamanan pangan dengan memenuhi standar yang berlaku serta meminimalkan potensi kontaminasi dan risiko kesehatan konsumen.
+
+	\item Mendukung otomasi dan efisiensi operasional, sehingga proses evaluasi kualitas makanan tidak lagi sepenuhnya mengandalkan \textit{feeling} penjual.
+\end{enumerate}
+
+Dengan demikian, kebutuhan utama yang muncul adalah pengembangan sistem pemantauan kesegaran makanan berbasis sensor yang mampu memberikan output evaluatif secara konsisten, akurat, dan \textit{real time}. Kehadiran sistem ini tidak hanya meningkatkan keamanan pangan, tetapi juga menjadi fondasi bagi \textit{smart canteen} yang ideal, berkelanjutan, dan mampu menekan \textit{food waste} melalui pengambilan keputusan yang tepat pada fase \textit{post-dining}.
 \subsection{Identifikasi Masalah Pengguna}
-\lipsum[5]
+Dalam konteks operasional \textit{smart canteen}, khususnya pada fase \textit{post-dining}, pengelola dan penjual menghadapi beberapa permasalahan yang menghambat penilaian kondisi makanan secara akurat. Masalah-masalah utama tersebut meliputi:
+
+\begin{enumerate}
+	\item \textbf{Penilaian kesegaran yang subjektif}
+
+	Pemeriksaan makanan masih mengandalkan indra penciuman, visual, dan pengalaman personal sehingga hasilnya tidak konsisten dan rentan kesalahan.
+
+	\item \textbf{Tidak tersedianya indikator objektif untuk mendukung keputusan}
+
+	Pengguna tidak memiliki data terukur yang dapat dijadikan dasar dalam menentukan apakah makanan masih aman, sehingga keputusan penyimpanan atau pembuangan sering bersifat spekulatif.
+
+	\item \textbf{Risiko keamanan pangan yang sulit terdeteksi}
+
+	Tanpa pemantauan ilmiah, potensi pembusukan atau kontaminasi dini tidak dapat diidentifikasi, sehingga meningkatkan risiko bagi konsumen dan operasional kantin.
+
+	\item \textbf{Kesulitan menentukan tindakan dalam alur \textit{food waste management}}
+
+	Ketiadaan sistem pendukung membuat penjual kesulitan menentukan apakah makanan sebaiknya disimpan, didonasikan, atau dibuang, yang dapat berujung pada pemborosan atau penyajian makanan yang tidak aman.
+\end{enumerate}
 \subsection{Kebutuhan Fungsional}
-\lipsum[6]
+Berdasarkan identifikasi masalah pengguna yang telah dijabarkan, sistem pemantauan kesegaran makanan harus memiliki beberapa kemampuan fungsional kunci. Kebutuhan fungsional ini dirancang untuk memberikan solusi terukur dan otomatis dalam mengevaluasi kondisi makanan sisa pada fase \textit{post-dining}. Setiap kebutuhan fungsional saling terintegrasi untuk memastikan bahwa pengguna mendapatkan rekomendasi keputusan yang akurat dan dapat diandalkan dalam mengelola limbah makanan.
+
+Kebutuhan fungsional sistem dapat dilihat secara detail pada Tabel \ref{tbl:kebutuhan-fungsional} berikut ini.
+
+\input{table/3-1-kebutuhan-fungsional.tex}
 \subsection{Kebutuhan Nonfungsional}
-\lipsum[7]
+Selain kebutuhan fungsional, sistem pemantauan kesegaran makanan juga harus memenuhi berbagai aspek kualitas dan karakteristik teknis yang mendukung keberhasilan implementasi. Kebutuhan nonfungsional ini mencakup aspek keandalan, performa, skalabilitas, dan kemudahan implementasi yang menjadi kunci dalam memastikan sistem dapat berfungsi secara optimal di lingkungan operasional kantin. Setiap aspek dirancang dengan mempertimbangkan konteks penggunaan pada institusi pendidikan dan keterbatasan sumber daya yang mungkin ada.
+
+Kebutuhan nonfungsional sistem secara lengkap dapat dilihat pada Tabel \ref{tbl:kebutuhan-nonfungsional} berikut ini.
+
+\input{table/3-2-kebutuhan-nonfungsional.tex}
 
 \section{Analisis Pemilihan Solusi}
 \subsection{Alternatif Solusi}
-\lipsum[8]
+Dalam pengembangan sistem pemantauan kesegaran makanan untuk Smart Canteen, terdapat beberapa pendekatan teknis yang dapat dipilih. Setiap alternatif memiliki karakteristik unik, kelebihan, dan kekurangan yang perlu dipertimbangkan secara cermat. Analisis alternatif solusi ini dilakukan untuk mengidentifikasi pendekatan yang paling sesuai dengan konteks kantin skala kecil hingga menengah, keterbatasan daya komputasi, serta target implementasi dengan biaya rendah. Berbagai alternatif berkisar dari metode berbasis aturan sederhana hingga pendekatan machine learning yang lebih canggih, masing-masing dengan trade-off antara kompleksitas, akurasi, dan kemudahan implementasi.
+
+Perbandingan lengkap dari keempat alternatif solusi dapat dilihat pada Tabel \ref{tbl:alternatif-solusi} berikut ini.
+
+\input{table/3-3-alternatif-solusi.tex}
 \subsection{Analisis Penentuan Solusi}
-\lipsum[9]
+Untuk memilih solusi terbaik dari keempat alternatif yang telah diuraikan, dilakukan evaluasi sistematis berdasarkan kriteria-kriteria yang relevan dengan kebutuhan Smart Canteen. Setiap solusi dinilai menggunakan lima parameter utama dengan bobot yang berbeda, mencerminkan prioritas dan konteks implementasi sistem. Parameter evaluasi mencakup akurasi klasifikasi yang menentukan keandalan sistem dalam mendeteksi kesegaran makanan, efisiensi komputasi yang menjadi faktor kritis pada perangkat berbiaya rendah, skalabilitas untuk pertumbuhan sistem di masa depan, kemudahan integrasi dengan infrastruktur Smart Canteen yang sudah ada, serta ketersediaan penelitian dan studi acuan yang dapat mendukung implementasi.
+
+Hasil penilaian lengkap dari semua alternatif solusi berdasarkan kriteria evaluasi dapat dilihat pada Tabel \ref{tbl:penentuan-solusi} berikut ini.
+
+\input{table/3-4-penentuan-solusi.tex}
+
+Berdasarkan hasil evaluasi pada Tabel \ref{tbl:penentuan-solusi}, solusi \textbf{\textit{Multi-Model ML} Klasik (LR, RF, KNN, DT)} meraih skor tertinggi yaitu 4.45, diikuti oleh \textit{Single-Model ML} dengan skor 4.40, \textit{Deep Learning} dengan skor 3.50, dan \textit{Rule-Based System} dengan skor 3.00. Keunggulan \textit{Multi-Model ML} terletak pada kemampuannya menangani pola non-linear dengan akurasi tinggi (skor 5), sambil tetap mempertahankan skalabilitas yang baik (skor 4) dan ketersediaan studi acuan yang kuat (skor 5). Meskipun memerlukan proses \textit{training} dan \textit{tuning}, pendekatan ini tetap cocok untuk implementasi pada kantin dengan dataset sensor kecil hingga menengah. Dengan mempertimbangkan trade-off antara akurasi, efisiensi, skalabilitas, dan kemudahan implementasi, solusi \textit{Multi-Model ML} Klasik dipilih sebagai pendekatan yang paling sesuai untuk pengembangan sistem pemantauan kesegaran makanan pada Smart Canteen.

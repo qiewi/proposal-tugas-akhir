@@ -80,6 +80,7 @@
 \usepackage{setspace} % for line spacing
 \onehalfspacing % spasi 1.5
 \usepackage{graphicx} % for images
+\usepackage{pdfpages} % for including PDF pages
 \usepackage{caption} % for customizing captions
 \usepackage{subcaption} % for sub-figures
 \usepackage{hyperref} % for hyperlinks
@@ -246,65 +247,68 @@
 
 
 % ==========================================
-% LEMBAR PENGESAHAN 
+% LEMBAR PENGESAHAN
 % ==========================================
-\newpage
-\thispagestyle{empty}
-\pagenumbering{gobble}
-\begin{center}
-  \textbf{\large LEMBAR PENGESAHAN}\\[1cm]
-  \vspace*{1.5cm}
+% Memasukkan file PDF hasil scan lembar pengesahan
+% Pastikan file 'LembarPengesahanSigned.pdf' sudah ada di folder yang sama dengan file .tex
+\includepdf[pages={1}]{LembarPengesahanSigned.pdf}
+% \newpage
+% \thispagestyle{empty}
+% \pagenumbering{gobble}
+% \begin{center}
+%   \textbf{\large LEMBAR PENGESAHAN}\\[1cm]
+%   \vspace*{1.5cm}
     
-  {\large\bfseries Sistem Klasifikasi Kesegaran Makanan Berbasis Machine Learning dan Sensor Gas MQ pada Platform Smart Canteen}\\
-     \vspace{2cm}
+%   {\large\bfseries Sistem Klasifikasi Kesegaran Makanan Berbasis Machine Learning dan Sensor Gas MQ pada Platform Smart Canteen}\\
+%      \vspace{2cm}
 
-  {\Large \textbf{Proposal Tugas Akhir}}\\
+%   {\Large \textbf{Proposal Tugas Akhir}}\\
 
 
-  \vspace{1.5cm}
+%   \vspace{1.5cm}
     
     
-  {\large Oleh}\\[0.3cm]
-    \textbf{
-    {\large Rizqi Andhika Pratama}\\
-    {\large 18222118}
-  }\\
+%   {\large Oleh}\\[0.3cm]
+%     \textbf{
+%     {\large Rizqi Andhika Pratama}\\
+%     {\large 18222118}
+%   }\\
     
-  \vspace{0.5cm}
+%   \vspace{0.5cm}
  
-  {\large Program Studi Sistem dan Teknologi Informasi}\\
-  {\large Sekolah Teknik Elektro dan Informatika}\\
-  {\large Institut Teknologi Bandung}\\
+%   {\large Program Studi Sistem dan Teknologi Informasi}\\
+%   {\large Sekolah Teknik Elektro dan Informatika}\\
+%   {\large Institut Teknologi Bandung}\\
 
-  \vspace{1.5cm}
+%   \vspace{1.5cm}
 
-  Proposal Tugas Akhir ini telah disetujui dan disahkan\\ 
-  di Bandung, pada tanggal \today\\[1cm]
+%   Proposal Tugas Akhir ini telah disetujui dan disahkan\\ 
+%   di Bandung, pada tanggal \today\\[1cm]
 
-% ==========================================
-% Versi 1 pembimbing (default)
-% ==========================================
-	Pembimbing  \\[3cm]
-	Prof. Dr. Suhono Harso Supangkat, M.Eng.   \\[0.2cm]
-	NIP. 123456789 
-% ==========================================
+% % % ==========================================
+% % % Versi 1 pembimbing (default)
+% % % ==========================================
+% % 	Pembimbing  \\[3cm]
+% % 	Prof. Dr. Suhono Harso Supangkat, M.Eng.   \\[0.2cm]
+% % 	NIP. 196212031988111001
+% % % ==========================================
 
-\end{center}
+% \end{center}
 
-\vspace{1cm}
-\noindent
+% % \vspace{1cm}
+% \noindent
 
-% ==========================================
-% Jika ada 2 pembimbing TA, uncomment dan edit 
-% tabular di bawah ini. Kemudian, comment out atau hapus
-% bagian versi 1 pembimbing di atas.
-% ==========================================
+% % ==========================================
+% % Jika ada 2 pembimbing TA, uncomment dan edit 
+% % tabular di bawah ini. Kemudian, comment out atau hapus
+% % bagian versi 1 pembimbing di atas.
+% % ==========================================
 
-%\begin{tabular}{p{1cm}p{7cm}p{7cm}}
-%   & Pembimbing 1 & Pembimbing 2 \\[3cm]
-%   & Dr. Ir. John Doe, M.T. & Dr. Mary Doe, M.Sc. \\[0.2cm]
-%   &  NIP. 123456789 & NIP. 987654321
-%\end{tabular}
+% \begin{tabular}{@{}p{7cm}p{7cm}@{}}
+%   Pembimbing 1 & Pembimbing 2 \\[3cm]
+%   Prof. Dr. Suhono Harso Supangkat, M.Eng. & Ir. Devi Willieam Anggara, S.T., M.Phil., Ph.D., IPP \\[0.2cm]
+%   NIP. 196212031988111001 & NIP. 124110055
+% \end{tabular}
 
 
 

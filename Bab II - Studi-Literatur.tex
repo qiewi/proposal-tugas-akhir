@@ -3,287 +3,171 @@
 % ==========================================
 \chapter{STUDI LITERATUR}
 \label{chap:studi-literatur}
-\section{Penulisan Gambar, Tabel, Rumus, dan Kode}
-\lipsum[1]
 
-\subsection{Gambar}
-Contoh gambar dapat dilihat pada Gambar \ref{gambar:jaringan}. Gambar dan judulnya diposisikan di tengah. Nomor gambar tidak diakhiri tanda titik. Gambar tersebut dibuat menggunakan aplikasi draw.io dan disimpan ke format PNG setelah dengan zoom setting pada angka 300\%. Ukuran gambar yang ditampilkan dapat diatur dengan mengubah nilai \textit{width} dalam sintaks \textit{includegraphics}.
+\section{Kantin}
 
-\begin{figure}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\centering
-  \captionsetup{justification=centering}
-    	\includegraphics[width=0.7\textwidth]{image/gambar1.png}
-	\caption{Contoh gambar jaringan}
-	\label{gambar:jaringan}
-\end{figure}
+Kantin kampus merupakan salah satu fasilitas penting yang mendukung keberlangsungan aktivitas sivitas akademika. Selain menyediakan kebutuhan konsumsi sehari-hari, kantin juga menjadi ruang sosial tempat mahasiswa, dosen, maupun pegawai berinteraksi secara informal. Pada konteks kesehatan, keberadaan kantin yang mampu menyediakan pilihan makanan dan minuman yang layak, aman, serta bergizi merupakan faktor pendukung yang tidak dapat dikesampingkan. Pemenuhan kebutuhan nutrisi yang baik berkontribusi terhadap stamina, konsentrasi belajar, serta kesejahteraan mahasiswa secara umum.
 
-Gambar umumnya tidak jelas atau kabur jika gambar tersebut:
-\begin{enumerate}[a.]
-  \item diperoleh dari hasil cropping pada suatu halaman buku atau situs web;
-  \item hasil pembesaran gambar yang gambar aslinya sebenarnya berukuran kecil; atau
-  \item disimpan dalam resolusi kecil
-\end{enumerate}
-Ketidakjelasan gambar ini dapat dilihat pada garis-garis diagram yang tidak tegas dan tulisan-tulisan dalam gambar yang tampak kabur dan kurang jelas terbaca.
+Di balik fungsi penyediaan pangan, kantin juga memiliki peran edukatif. Lingkungan kantin dapat menjadi sarana penerapan budaya hidup sehat, pembiasaan perilaku bersih, serta implementasi nilai-nilai kedisiplinan dalam antre, memilih makanan, maupun menjaga kebersihan area makan. Selain itu, kantin menjadi pusat aktivitas sosial yang memperkuat interaksi antarmahasiswa di luar ruang kelas.
 
-Untuk mendapatkan gambar yang tidak kabur (\textit{blur}), langkah-langkah berikut dapat digunakan:
-\begin{enumerate}[(a)]
-\item Gambar yang didapat di suatu pustaka atau referensi sebaiknya digambar ulang, misalnya menggunakan PowerPoint, Canva, Figma, draw.io, atau yang lainnya.
-\item Jika diagram atau ilustrasi digambar menggunakan draw.io, saat gambar disimpan ke format PNG atau JPG (\textit{export as}), lakukan \textit{zoom} ke minimal 300\% (\textit{the default value is} 100\%). 
-\item Jika diagram digambar dengan menggunakan PowerPoint, gambar dapat langsung di-\textit{copy-paste} ke Word.
-\end{enumerate}
+Tingginya ketergantungan komunitas kampus terhadap kantin memperlihatkan bahwa kualitas makanan, fasilitas penyimpanan, serta sistem pengelolaannya memiliki dampak langsung terhadap kesehatan pengguna.
 
-\subsection{Tabel}
-Tabel ada dua jenis, yaitu tabel yang bisa termuat dalam satu halaman dan tabel yang sangat panjang sehingga tidak muat dalam satu halaman.
-\subsubsection{Tabel yang Muat dalam Satu Halaman}
-Contoh tabel dapat dilihat pada Tabel \ref{tbl:harga1} dan \ref{tbl:harga2}. Tabel dan judulnya dibuat rata kiri dan judul tabel diletakkan di atas tabel. Usahakan tabel dapat ditulis dalam satu halaman, tidak terpotong ke halaman berikutnya.
+Menurut \textcite{februhartanty2018}, pengelolaan kantin sehat perlu bertumpu pada empat aspek utama:
 
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-  \begin{tabular}{ | p{2cm} | p{2cm} | p{3cm} |}
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan pokok}
-\label{tbl:harga1}
-\end{table}
-
-
-
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\begin{tabular}{ | l | c | r | }
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan sekunder}
-\label{tbl:harga2}
-\end{table}
-
-% -- Example of importing table from external file --
-\subsubsection{Mengimpor Tabel dari Berkas Eksternal}
-
-Tabel \ref{tbl:harga3} diimpor dari berkas eksternal \textit{table/tabel1.tex} menggunakan perintah \textit{input}. 
-Dengan demikian, jika tabel tersebut perlu diubah, cukup mengubah pada berkas eksternal tersebut tanpa perlu mengubah pada berkas utama ini.
-
-\input table/tabel1.tex
-
-
-% -- Example of long table --
-\subsubsection{Tabel yang Sangat Panjang}
-Jika tabel terlalu panjang sehingga tidak muat dalam satu halaman, gunakan paket 
-\textit{longtable} untuk membuat tabel yang dapat terpotong ke halaman berikutnya, 
-seperti pada Tabel \ref{tbl:longtable1}.
-
-\begin{longtable}{@{\extracolsep{\fill}} l c r r}
-\caption{Comprehensive Data Table Example}\label{tbl:longtable1} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endfirsthead
-
-\caption{Comprehensive Data Table Example (lanjutan)} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endhead
-
-\midrule
-\multicolumn{4}{r}{\textit{Bersambung ke halaman berikutnya}} \\
-%\bottomrule
-\endfoot
-
-\bottomrule
-\endlastfoot
-
-% === Table Data ===
-1 & Alice Smith & 89 & 5 \\
-2 & Bob Johnson & 93 & 3 \\
-3 & Carol Davis & 95 & 2 \\
-4 & Daniel Wilson & 88 & 6 \\
-5 & Eve Thompson & 97 & 1 \\
-6 & Frank Brown & 85 & 7 \\
-7 & Grace Lee & 91 & 4 \\
-8 & Henry Miller & 80 & 9 \\
-9 & Irene Garcia & 83 & 8 \\
-10 & Jack Robinson & 78 & 10 \\
-% Repeat with more rows to make it long
-11 & Kevin Harris & 76 & 11 \\
-12 & Laura Martin & 75 & 12 \\
-13 & Michael Clark & 74 & 13 \\
-14 & Natalie Lewis & 73 & 14 \\
-15 & Olivia Walker & 72 & 15 \\
-16 & Peter Hall & 71 & 16 \\
-17 & Quinn Allen & 70 & 17 \\
-18 & Rachel Young & 69 & 18 \\
-19 & Samuel King & 68 & 19 \\
-20 & Tina Wright & 67 & 20 \\
-21 & Uma Scott & 66 & 21 \\
-22 & Victor Green & 65 & 22 \\
-23 & Wendy Adams & 64 & 23 \\
-24 & Xavier Nelson & 63 & 24 \\
-25 & Yolanda Carter & 62 & 25 \\
-26 & Zachary Perez & 61 & 26 \\
-27 & Amelia Baker & 60 & 27 \\
-28 & Benjamin Rivera & 59 & 28 \\
-29 & Charlotte Rogers & 58 & 29 \\
-30 & David Murphy & 57 & 30 \\
-31 & Ethan Cooper & 56 & 31 \\
-32 & Fiona Reed & 55 & 32 \\
-33 & George Bailey & 54 & 33 \\
-34 & Hannah Cox & 53 & 34 \\
-35 & Isaac Howard & 52 & 35 \\
-36 & Julia Ward & 51 & 36 \\
-37 & Kyle Flores & 50 & 37 \\
-38 & Lily Bell & 49 & 38 \\
-39 & Mason Sanders & 48 & 39 \\
-40 & Nora Patterson & 47 & 40 \\
-41 & Owen Ramirez & 46 & 41 \\
-42 & Penelope Torres & 45 & 42 \\
-43 & Quentin Foster & 44 & 43 \\
-44 & Rebecca Gonzales & 43 & 44 \\
-45 & Sebastian Bryant & 42 & 45 \\
-46 & Taylor Alexander & 41 & 46 \\
-47 & Ursula Russell & 40 & 47 \\
-48 & Vincent Griffin & 39 & 48 \\
-49 & William Diaz & 38 & 49 \\
-50 & Zoe Simmons & 37 & 50 \\
-% (You can easily extend this list to hundreds of rows)
-\end{longtable}
-
-\subsubsection{Beberapa Contoh Penulisan Rumus atau Persamaan Matematika Menggunakan LaTeX Termasuk Penomorannya}
-Contoh rumus matematika dapat ditulis seperti pada Persamaan \ref{eq:contoh1} di bawah ini. 
-Penomoran persamaan diletakkan di sebelah kanan, dan rumus ditulis dalam mode \textit{display math}.
-\begin{equation}
-E = mc^2
-\label{eq:contoh1}
-\end{equation}
-
-Contoh lain penulisan rumus matematika yang lebih kompleks dapat ditulis seperti pada Persamaan \ref{eq:rumus2}.
-
-\begin{align}
-f(x) &= ax^2 + bx + c \\
-f'(x) &= \frac{d}{dx}(ax^2 + bx + c) \notag \\ % tidak menampilkan nomor pada baris ini
-      &= 2ax + b \label{eq:rumus2}
-\end{align}
-
-Jika rumus terlalu panjang untuk ditulis dalam satu baris, gunakan lingkungan \textit{multline} seperti pada Persamaan \ref{eq:rumus3} di bawah ini.
-\begin{multline} 
-y = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 + a_5x^5 + a_6x^6 + a_7x^7 \\
-    + a_8x^8 + a_9x^9 + a_{10}x^{10} \label{eq:rumus3}
-\end{multline}
-
-Jika ada penurunan rumus yang terdiri dari beberapa baris, namun tidak memerlukan penomoran pada setiap baris, gunakan lingkungan \textit{align*}, misalnya:
-
-\begin{align*} 
-S &= \sum_{i=1}^{n} i^2 \\
-  &= 1^2 + 2^2 + 3^2 + \cdots + n^2 \\
-  &= \frac{n(n + 1)(2n + 1)}{6}
-\intertext{Contoh lainnya adalah rumus untuk mencari nilai rata-rata fungsi $f(x)$ pada interval $[p, q]$:}
-\bar{f} &= \frac{1}{q - p} \int_{p}^{q} f(x) \, dx \\
-        &= \frac{1}{q - p} \int_{p}^{q} (ax^2 + bx + c) \, dx \\
-        &= \frac{1}{q - p} \left[ \frac{a}{3}x^3 + \frac{b}{2}x^2 + cx \right]_p^q \\
-        &= \frac{a(q^3 - p^3)}{3(q - p)} + \frac{b(q^2 - p^2)}{2(q - p)} + c \label{eq:rumus4}
-\end{align*}
-
-
-
-\subsection{Algoritma, Pseudocode, atau Kode}
-Contoh penulisan algoritma atau pseudocode dapat ditulis seperti pada Kode \ref{alg:contoh1} di bawah ini. 
-Gunakan paket \textit{listings} untuk menulis source code dalam bahasa pemrograman tertentu, seperti pada Kode \ref{lst:contoh1}. 
-
-
-% -- Example of pseudocode and source code listing --
-% -- Gunakan minipage agar listing tidak terpotong ke halaman berikutnya --
-\begin{minipage}{\textwidth} 
-\begin{lstlisting}[frame=lines, captionpos=t, caption={Contoh pseudocode}, label={alg:contoh1}]
-ALGORITHM HelloWorld
-   PRINT "Hello, World!"
-END ALGORITHM
-\end{lstlisting}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[language=Python, frame=single, caption={Contoh source code Python}, captionpos=t, label={lst:contoh1}]
-def hello_world():
-    print("Hello, World!")       
-hello_world()
-\end{lstlisting}
-\end{minipage}
-
-
-\section{Beberapa Kesalahan Penulisan yang Sering Terjadi}
-\subsection{Penggunaan Kata "di mana" atau "dimana"}
-Banyak yang menuliskan kata "di mana" atau "dimana" sebagai pengganti kata "which" dalam bahasa Inggris. 
-Padahal, penggunaan kata "di mana" atau "dimana" tidak tepat dalam konteks tersebut. Demikian juga untuk kata serupa, misalnya "yang mana".
-Kata "di mana" atau "dimana" ini harus diganti dengan kata lain, seperti "dengan", "tempat", "yang", dan sebagainya tergantung kalimatnya.
-Penjelasan lengkap dapat dilihat pada \autocite{BPBI}.
-
-\subsection{Penggunaan Kata "sedangkan" dan "sehingga"}
-
-\begin{table}[t]
-  \begin{tabular}{|c|l|l|}
-  \hline
-  Kata & Salah & Benar \\ \hline
-  sedangkan & \begin{tabular}[c]{@{}c@{}}Sedangkan sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna,\\ sedangkan sistem baru belum siap.\end{tabular} \\ \hline
-  sehingga & \begin{tabular}[c]{@{}c@{}}Sehingga sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna sehingga\\ sistem baru belum siap.\end{tabular} \\ \hline
-  \end{tabular}
-  \caption{Contoh penggunaan kata "sedangkan" dan "sehingga"}
-  \label{tbl:sedangkan_sehingga}
-\end{table}
-
-Kata "sedangkan" dan "sehingga" adalah kata hubung atau konjungsi. 
-Konjungsi adalah kata atau ungkapan yang menghubungkan satuan bahasa 
-(kata, frasa, klausa, dan kalimat). 
-Konjungsi dapat dibagi menjadi konjungsi intrakalimat dan antarkalimat.  
-Kata "sedangkan" menghubungkan dua klausa yang bersifat kontrasif, 
-sedangkan "sehingga" menghubungkan dua klausa yang bersifat kausal. 
-Dalam ragam formal, kata hubung “sedangkan” dan “sehingga” hanya dapat digunakan 
-sebagai konjungsi intrakalimat sehingga kedua konjungsi itu \textbf{tidak dapat diletakkan pada awal kalimat}.
-Selain itu, penggunaan kata "sedangkan" harus didahului oleh koma (,), sedangkan kata "sehingga" tidak perlu didahului oleh koma (,).
-Contoh penggunaan yang benar dan salah dapat dilihat pada Tabel \ref{tbl:sedangkan_sehingga}.
-
-
-\subsection{Penggunaan Istilah yang Tidak Baku}
-Ada beberapa istilah yang sering digunakan dalam pembicaraan sehari-hari, tetapi tidak baku dalam penulisan ilmiah.
-Beberapa istilah tersebut antara lain:
 \begin{enumerate}
-  \item analisa $\rightarrow$ analisis
-  \item eksisting atau existing $\rightarrow$ yang ada atau saat ini
-  \item bisnis proses $\rightarrow$ proses bisnis
-  \item user $\rightarrow$ pengguna
-  \item system $\rightarrow$ sistem
-  \item database $\rightarrow$ basis data
-  \item aktifitas $\rightarrow$ aktivitas
-  \item efektifitas $\rightarrow$ efektivitas
-  \item sosial media $\rightarrow$ media sosial
+\item Komitmen dan Manajemen yang kuat melalui kebijakan dan pengawasan,
+
+\item Sarana dan Prasarana yang memenuhi standar penyimpanan, penyajian, dan kebersihan,
+
+\item Sumber Daya Manusia yang memahami prinsip keamanan pangan, dan
+
+\item Mutu pangan yang harus dipastikan aman, layak, dan sesuai rekomendasi gizi.
 \end{enumerate}
 
-\subsection{Pemisah Desimal dan Ribuan}
-Tanda pemisah desimal dalam bahasa Indonesia adalah tanda koma, contoh:
+Dengan demikian, penguatan pengelolaan kantin secara sistematis bukan hanya mendukung pemenuhan kebutuhan konsumsi, tetapi juga menjaga kualitas kesehatan komunitas kampus secara berkelanjutan.
+
+\section{Smart Canteen}
+
+Konsep \textit{smart canteen} muncul sebagai respons terhadap kebutuhan pengelolaan kantin yang lebih efisien, higienis, dan berbasis data. Berbeda dengan kantin konvensional yang sebagian besar prosesnya dilakukan secara manual, \textit{smart canteen} mengintegrasikan teknologi digital untuk meningkatkan kualitas layanan, transparansi, dan keamanan pangan. Pendekatan ini berupaya menghadirkan ekosistem kantin yang lebih modern dengan memanfaatkan otomasi, sensor, sistem informasi, hingga analitik data untuk mendukung pengambilan keputusan.
+
+Pada praktiknya, \textit{smart canteen} dapat mencakup berbagai aspek, seperti sistem pemesanan digital, pembayaran tanpa kontak, manajemen inventori otomatis, hingga pemantauan kualitas makanan secara \textit{real-time}. Integrasi teknologi ini tidak hanya meningkatkan kenyamanan pengguna, tetapi juga meminimalkan potensi kesalahan manusia dalam pengelolaan pangan, terutama pada tahap penyimpanan dan penyajian.
+
+Di lingkungan kampus, \textit{smart canteen} memberikan manfaat strategis. Dengan jumlah pengguna yang besar dan alur konsumsi yang cepat, teknologi dapat membantu mempercepat layanan, mengurangi antrean, dan meningkatkan pengalaman makan mahasiswa dan staf. Lebih jauh lagi, penerapan sistem \textit{monitoring} berbasis sensor memungkinkan pihak pengelola untuk menjaga standar mutu pangan secara konsisten. Misalnya, teknologi sensor dapat memantau suhu penyimpanan, kualitas udara, atau emisi gas tertentu yang menjadi indikator penurunan mutu makanan.
+
+Proyek Smart Canteen ITB yang sedang dikembangkan menghadirkan gambaran nyata implementasi konsep ini. Sistem tersebut mencoba merampingkan alur pemesanan dan transaksi, sekaligus membuka peluang integrasi modul tambahan seperti pemantauan kualitas makanan. Dengan adanya otomasi dan digitalisasi, pengelola dapat memperoleh data akurat mengenai aktivitas kantin, pola konsumsi, hingga potensi risiko keamanan pangan.
+
+Secara keseluruhan, \textit{smart canteen} bukan hanya sekadar digitalisasi layanan kantin, tetapi sebuah pendekatan holistik untuk meningkatkan efisiensi operasional dan menjaga keamanan pangan. Dalam konteks penelitian ini, konsep \textit{smart canteen} memberikan landasan bagi integrasi teknologi sensor untuk mendukung tindakan preventif terhadap penurunan kualitas makanan, sehingga pengalaman makan di kantin menjadi lebih sehat, nyaman, dan terjamin.
+
+\section{Keamanan Pangan, Codex Alimentarius, dan Prinsip HACCP}
+
+Keamanan pangan (\textit{food safety}) menjadi isu yang sangat penting dalam rantai penyediaan makanan, terutama di lingkungan pendidikan seperti kampus yang jumlah konsumsinya tinggi dan berlangsung setiap hari. Keamanan pangan merujuk pada seluruh prosedur dan kondisi yang diperlukan untuk mencegah kontaminasi biologis, kimia, maupun fisik yang dapat membahayakan konsumen. Dalam konteks kantin, keamanan pangan mencakup mulai dari pemilihan bahan baku, proses penyimpanan, pengolahan, penyajian, hingga pemantauan kondisi makanan selama berada di etalase atau meja saji.
+
+Salah satu acuan internasional yang menjadi landasan dalam penetapan standar keamanan pangan adalah Codex Alimentarius. Codex merupakan kumpulan standar, pedoman, dan praktik internasional yang dikembangkan oleh FAO dan WHO untuk memastikan pangan aman, bermutu, serta diperdagangkan secara adil di tingkat \textit{global}. Dokumen ini memberikan kerangka kerja yang dapat digunakan lembaga, industri pangan, maupun institusi pendidikan untuk menetapkan sistem pengawasan yang terstruktur.
+
+Salah satu konsep kunci yang diatur dalam Codex adalah \textit{Hazard Analysis and Critical Control Point} (HACCP). HACCP merupakan pendekatan sistematis untuk mengidentifikasi potensi bahaya dalam proses produksi maupun penyajian makanan, kemudian menentukan titik kendali kritis (\textit{critical control points}) yang harus diawasi untuk mencegah terjadinya risiko. Prinsip-prinsip HACCP meliputi analisis bahaya, penetapan CCP, penentuan batas kritis, pemantauan, tindakan koreksi, verifikasi, dan dokumentasi.
+
+Penerapan HACCP di kantin kampus menjadi sangat penting karena proses penyajian makanan berlangsung secara berulang setiap hari, dengan ragam hidangan dan kondisi penyimpanan yang dinamis. Pengawasan visual secara manual sering kali tidak cukup untuk mendeteksi perubahan kualitas makanan secara objektif. Oleh karena itu, integrasi teknologi seperti sensor gas atau sistem \textit{monitoring} berbasis IoT dapat membantu mendukung prinsip HACCP, terutama pada aspek pemantauan kondisi makanan sepanjang siklus penyajiannya. Pendekatan ini memungkinkan deteksi dini terhadap potensi kerusakan atau kontaminasi sehingga risiko terhadap konsumen dapat diminimalkan.
+
+\section{Electronic Nose (E-Nose) dan Volatile Organic Compounds (VOC) pada Pangan}
+
+\textit{Electronic nose} (\textit{e-nose}) merupakan perangkat berbasis sensor yang dirancang untuk meniru kemampuan sistem penciuman manusia dalam mendeteksi pola aroma tertentu. Pada konteks pangan, \textit{e-nose} digunakan untuk mengenali perubahan komposisi gas yang dilepaskan oleh bahan makanan selama proses penyimpanan dan pembusukan. Perubahan aroma ini terjadi akibat terbentuknya senyawa volatil atau \textit{volatile organic compounds} (VOC) yang muncul seiring degradasi biologis maupun kimia pada makanan. Sistem \textit{e-nose} memanfaatkan kombinasi beberapa sensor gas untuk menangkap karakteristik VOC tersebut, kemudian mengubahnya menjadi pola sinyal yang dapat dianalisis secara komputasional.
+
+Berbagai penelitian menunjukkan bahwa profil VOC dapat menjadi indikator objektif kesegaran makanan. Studi \textit{e-nose} yang dilakukan oleh \textcite{hasan2012} pada daging sapi dan ikan menunjukkan bahwa proses pembusukan memicu munculnya gas seperti ammonia, toluene, hydrogen, dan komponen volatil lainnya, yang dapat ditangkap menggunakan sensor MOS (\textit{Metal Oxide Semiconductor}). Dalam penelitian tersebut, \textit{array sensor} seperti MQ3, GSBT11, TGS826, dan sensor MOS lain mampu membedakan dengan jelas kondisi \textit{fresh} dan \textit{rotten} melalui sinyal \textit{steady-state} dari masing-masing sensor. Hasil penelitian menunjukkan bahwa pola VOC yang direkam oleh \textit{e-nose} memiliki korelasi kuat dengan kondisi mikrobiologis bahan pangan, sehingga dapat dimanfaatkan untuk klasifikasi otomatis tingkat kesegarannya.
+
+Temuan serupa juga muncul pada penelitian \textcite{stephan2025} yang mengembangkan sistem pemantauan kesegaran pada \textit{smart vending cart}. Sistem tersebut menggunakan kombinasi sensor MQ2 (hydrogen), MQ9 (\textit{carbon monoxide}), MQ135 (ammonia), dan MQ138 (toluene) untuk mengamati dinamika gas yang muncul akibat kerusakan produk segar. Analisis \textit{feature importance} dalam model \textit{machine learning} menunjukkan bahwa selain faktor lingkungan seperti suhu dan kelembaban, sensor VOC—khususnya MQ135 dan MQ138—memiliki kontribusi besar dalam mengidentifikasi tingkat \textit{spoilage}. Hal ini memperkuat premis bahwa VOC merupakan salah satu indikator kunci dalam penentuan kualitas makanan secara \textit{non-destructive}.
+
+Secara prinsip, \textit{e-nose} bekerja dengan menempatkan sampel makanan pada ruang tertutup sehingga senyawa volatil yang dilepaskan dapat terakumulasi dan dideteksi secara stabil oleh sensor. Setiap sensor bereaksi terhadap spektrum gas tertentu dan menghasilkan sinyal listrik yang mencerminkan konsentrasi relatif gas tersebut. Pola respons seluruh sensor kemudian dikombinasikan untuk membentuk \textquotedblleft\textit{fingerprint} aroma\textquotedblright yang unik bagi tiap kondisi pangan. Karena makanan berbeda jenis menghasilkan VOC yang berbeda pula, penggunaan beberapa sensor sekaligus (\textit{sensor array}) menjadi penting agar sistem mampu menangkap variasi tersebut secara lebih menyeluruh.
+
+Pendekatan \textit{e-nose} sangat sesuai untuk diterapkan dalam sistem pemantauan kualitas makanan pada kantin karena memiliki beberapa keunggulan:
+
 \begin{enumerate}
-  \item (Salah) Akurasi naik menjadi 50.6\% 
-  \item (Benar) Akurasi naik menjadi 50,6\% 
+\item mampu mendeteksi perubahan kualitas sebelum makanan tampak rusak secara visual,
+
+\item tidak memerlukan kontak langsung dengan sampel,
+
+\item dapat bekerja secara kontinu sebagai bagian dari sistem IoT, dan
+
+\item dapat dikombinasikan dengan algoritma \textit{machine learning} untuk meningkatkan akurasi klasifikasi.
 \end{enumerate}
 
-\subsection{Daftar atau \textit{List}}
-Ada beberapa aturan penulisan daftar atau \textit{list} yang perlu diperhatikan, antara lain:
-\begin{enumerate}[a)]
-\item Jika memungkinkan, hindari penggunaan “bullet points” atau sejenisnya. Sebaiknya, gunakan angka (1, 2, 3, ...) atau huruf (a, b, c, …). Dengan demikian, pembaca dapat dengan mudah melihat jumlah \textit{item} atau \textit{list}. 
-\item Jika dalam daftar hanya ada satu item, tidak perlu menggunakan nomor urut.
-\item Penjelasan atau deskripsi suatu item sebaiknya menyatu dengan judul item tersebut, tidak berbeda halaman. Contoh yang salah: judul item ada di halaman 10, namun deskripsinya di halaman 11. Sebaiknya pindahkan judul tersebut ke halaman 11.
-\item Jika penjelasan atau deskripsi suatu item cukup panjang, misalnya lebih dari 1 halaman atau terdiri atas beberapa paragraf, sebaiknya setiap item tersebut dijadikan judul subbab, kecuali jika level subbab sudah mencapai level 4. 
-\end{enumerate}
+Dengan berkembangnya teknologi IoT dan komputasi berbasis sensor, \textit{e-nose} menjadi salah satu metode yang paling menjanjikan untuk memonitor kondisi pangan secara objektif dan \textit{real-time}. Dalam konteks kantin kampus, penggunaan pendekatan ini dapat membantu memastikan makanan tetap aman dikonsumsi, mendukung penerapan prinsip HACCP pada tahap penyajian, serta meningkatkan efektivitas sistem \textit{smart canteen} secara keseluruhan.
 
-\subsection{Penggunaan Kata "masing-masing" dan "setiap"}
-Kata “masing-masing” digunakan di belakang kata yang diterangkan, misalnya 
-"Setiap proses menggunakan algoritma masing-masing". Kata “tiap-tiap” atau “setiap”
-ditempatkan di depan kata yang diterangkan, misalnya
-"Setiap proses menggunakan algoritma tertentu".
+\section{Sensor Gas MOS dan Keluarga MQ untuk Deteksi Keamanan Pangan}
+
+Sensor gas berbasis \textit{metal oxide semiconductor} (MOS) merupakan salah satu teknologi yang banyak digunakan dalam sistem pemantauan kualitas pangan karena kemampuannya mendeteksi perubahan komposisi gas yang dihasilkan bahan makanan selama penyimpanan maupun proses pembusukan. Sensor MOS bekerja berdasarkan perubahan resistansi lapisan semikonduktor ketika berinteraksi dengan gas tertentu. Perubahan resistansi ini menghasilkan keluaran listrik yang dapat diolah menjadi informasi mengenai konsentrasi gas yang terdeteksi. Kepekaan sensor MOS terhadap berbagai senyawa volatil menjadikannya salah satu komponen utama dalam pengembangan \textit{electronic nose} (\textit{e-nose}) untuk mendeteksi \textit{spoilage} secara \textit{non-destructive}.
+
+Keluarga sensor MQ termasuk jenis sensor MOS yang paling umum digunakan dalam aplikasi kualitas udara, emisi gas, dan pendeteksian kualitas makanan. Setiap tipe sensor MQ memiliki sensitivitas gas yang berbeda-beda, sehingga kombinasi beberapa sensor dapat membentuk profil aroma yang lebih komprehensif. Misalnya, MQ2 sensitif terhadap hidrogen dan gas mudah terbakar, MQ9 mendeteksi \textit{carbon monoxide}, MQ135 bereaksi kuat terhadap ammonia serta gas berbahaya lainnya, dan MQ138 mampu mengenali toluene serta sejumlah \textit{volatile organic compounds} (VOC). Gas-gas tersebut seringkali muncul sebagai hasil degradasi bahan pangan, sehingga keberadaannya menjadi indikator yang baik untuk menilai tingkat kesegaran.
+
+Dalam penelitian \textit{e-nose} oleh \textcite{hasan2012}, sensor MOS termasuk MQ3, GSBT11, dan TGS826 berhasil memetakan pola gas antara daging segar dan daging yang telah membusuk. Penelitian tersebut menunjukkan bahwa sensor MOS mampu menangkap perubahan konsentrasi gas volatil seperti ammonia dan alkohol yang dilepaskan selama proses pembusukan, sehingga menghasilkan sinyal berbeda yang dapat digunakan sebagai masukan bagi algoritma klasifikasi. Hasil penelitian tersebut menegaskan bahwa penggunaan \textit{sensor array}—bukan satu sensor tunggal—lebih efektif untuk mengidentifikasi kondisi makanan karena setiap sensor memiliki spektrum sensitivitas yang berbeda.
+
+Studi lain oleh \textcite{stephan2025} semakin memperkuat relevansi sensor MQ untuk deteksi \textit{spoilage}. Dalam sistem \textit{smart vending cart} yang mereka kembangkan, sensor MQ2, MQ9, MQ135, dan MQ138 digunakan untuk membaca emisi gas dari produk segar selama penyimpanan. Analisis \textit{feature importance} pada model klasifikasi menunjukkan bahwa MQ135 (ammonia) dan MQ138 (toluene) merupakan dua sensor dengan kontribusi tertinggi terhadap akurasi prediksi tingkat kesegaran. Hal ini selaras dengan temuan bahwa ammonia dan VOC aromatik merupakan biomarker utama dari proses pembusukan pangan. Dengan demikian, penggunaan sensor MQ dapat memberikan informasi yang kaya untuk mendukung sistem pemantauan kualitas pangan berbasis \textit{machine learning}.
+
+\subsection{Rentang Deteksi Sensor MQ terhadap Gas Pembusukan}
+
+\input{table/2-1-kapabilitas-sensor-mq.tex}
+
+\subsection{Ringkasan Temuan Sensitivitas Gas Berdasarkan Scopus}
+
+Berdasarkan literatur sistematis dari penelitian 2015–2024, berikut adalah ringkasan kemampuan sensor dalam mendeteksi gas pembusukan utama:
+
+\textbf{Amonia (NH$_3$)}
+
+\textit{Colorimetric sensor} dan sensor MOS mampu mendeteksi NH$_3$ pada 105 ppb–200 ppm, sesuai untuk \textit{monitoring} daging.
+
+\cite{Siribunbandal2023}; \cite{sun2022}.
+
+\textbf{Etanol}
+
+Sensor MQ3 mampu mendeteksi etanol dengan MAE sekitar 3.71 ppm, relevan untuk \textit{spoilage} buah.
+
+\cite{luo2023}.
+
+\textbf{Metana (CH$_4$)}
+
+Sensor MQ2 dan MQ4 mendeteksi metana pada kisaran 200–10.000 ppm, yang sering muncul akibat fermentasi anaerob pada daging maupun produk susu. MQ2 juga mendeteksi hydrogen dan VOC lain yang terkait tahap awal pembusukan.
+
+\cite{haugen2006}.
+
+\textbf{VOCs kompleks}
+
+\textit{Sensor array} dan \textit{machine learning} mampu mengklasifikasikan tahapan pembusukan dengan akurasi > 99\%, meskipun konsentrasi VOC sangat bervariasi menurut jenis makanan.
+
+\cite{guo2021}; \cite{haugen2006}.
+
+Selain sensitivitasnya yang tinggi terhadap VOC, sensor MQ memiliki kelebihan lain yang membuatnya cocok digunakan dalam sistem pemantauan kantin, seperti harga yang terjangkau, kemudahan integrasi dengan mikrokontroler, serta kemampuannya bekerja dalam jangka panjang. Meski demikian, sensor MQ memerlukan proses kalibrasi berkala untuk menjaga akurasi pembacaan, dan pembacaan sensor dapat terpengaruh oleh suhu serta kelembaban lingkungan. Oleh karena itu, kombinasi sensor gas dengan sensor lingkungan seperti DHT11/DHT22 sering digunakan untuk memperbaiki kestabilan data dan mendukung proses \textit{sensor fusion}.
+
+Secara keseluruhan, keberadaan keluarga sensor MQ menjadi bagian fundamental dalam sistem \textit{monitoring} kualitas makanan berbasis IoT. Sensor ini memungkinkan pengumpulan data gas secara kontinu, memberikan indikator awal terjadinya \textit{spoilage}, dan menyediakan sinyal yang dapat diolah oleh algoritma kecerdasan buatan. Dalam konteks \textit{smart canteen}, integrasi sensor MQ mendukung upaya menjaga keamanan pangan dengan memberikan peringatan dini terhadap potensi kerusakan makanan, sehingga mendukung penerapan prinsip HACCP pada tahap penyajian.
+
+\section{Sistem IoT untuk Pemantauan Kondisi Makanan}
+
+\textit{Internet of Things} (IoT) telah menjadi salah satu pendekatan paling efektif dalam meningkatkan efisiensi dan ketelusuran sistem pangan, termasuk pada tahap penyimpanan dan penyajian makanan. Dalam konteks kantin, IoT memungkinkan proses pemantauan kondisi pangan dilakukan secara \textit{real-time} melalui integrasi sensor, perangkat pemrosesan, dan jaringan komunikasi. Sistem ini berfungsi sebagai fondasi bagi konsep \textit{smart canteen}, di mana informasi mengenai kualitas makanan dapat dikumpulkan secara otomatis, dianalisis, dan digunakan untuk mendukung pengambilan keputusan.
+
+Konsep dasar IoT dalam pemantauan pangan mencakup tiga komponen utama: pengumpulan data menggunakan sensor, pemrosesan dan pengiriman data melalui mikrokontroler atau perangkat \textit{gateway}, serta visualisasi atau tindakan lanjutan berbasis data. \textcite{vitri2025} menekankan bahwa IoT sangat relevan dalam strategi pengelolaan pangan modern karena memungkinkan \textit{monitoring} berkelanjutan terhadap parameter lingkungan seperti suhu, kelembaban, dan kualitas udara. Parameter-parameter ini merupakan faktor kritis dalam menentukan stabilitas dan keamanan makanan, terutama di lingkungan penyajian seperti kantin kampus.
+
+Penerapan IoT dalam pemantauan kualitas makanan telah dibuktikan melalui berbagai penelitian. Salah satunya ditunjukkan oleh \textcite{hasan2012} melalui penggunaan \textit{e-nose} berbasis sensor gas MOS yang memanfaatkan mikrokontroler 8051 dan modul komunikasi nirkabel untuk mengirimkan data odor secara \textit{real-time}. Arsitektur tersebut menggambarkan bagaimana perangkat IoT beroperasi: sensor menangkap pola gas, mikrokontroler memproses sinyal awal, dan data dikirim menuju server untuk dianalisis lebih lanjut menggunakan algoritma klasifikasi. Pendekatan terdistribusi ini memungkinkan perangkat genggam digunakan dalam inspeksi pasar atau ruang penyimpanan tanpa perlu membawa komputer besar.
+
+Pengembangan lebih lanjut dari sistem IoT untuk pemantauan pangan dapat dilihat pada penelitian \textcite{stephan2025} yang merancang \textit{smart vending cart} dengan sistem pemantauan kesegaran berbasis sensor MQ2, MQ9, MQ135, dan MQ138. Pada sistem tersebut, mikrokontroler NodeMCU mengumpulkan data sensor, melakukan komputasi ringan, kemudian mengirimkan data atau parameter model ke server pusat melalui jaringan nirkabel. Sistem tersebut juga dilengkapi aktuator seperti Peltier \textit{cooler} dan \textit{humidifier} yang diatur otomatis berdasarkan kondisi lingkungan, memungkinkan kontrol komprehensif terhadap penyimpanan makanan. Dengan demikian, IoT tidak hanya berperan sebagai sistem pemantauan, tetapi juga mendukung otomatisasi tindakan untuk menjaga kualitas pangan.
+
+Salah satu keunggulan IoT dalam pemantauan makanan adalah kemampuannya menyediakan data berkesinambungan yang dapat digunakan untuk mendeteksi perubahan kecil secara dini. Dalam lingkungan kantin, hal ini sangat penting mengingat makanan yang disajikan dapat mengalami penurunan kualitas dalam waktu singkat akibat paparan suhu ruang, kelembaban rendah atau tinggi, serta kontaminasi silang. Sensor IoT memungkinkan deteksi dini terhadap indikasi \textit{spoilage} melalui pembacaan VOC, suhu, dan kelembaban, sehingga dapat mencegah makanan tidak layak konsumsi tersaji bagi pelanggan. Selain itu, data historis dari sensor dapat digunakan untuk analisis pola, evaluasi risiko, dan peningkatan prosedur penanganan pangan di masa mendatang.
+
+Namun demikian, implementasi IoT dalam pemantauan makanan juga menghadapi beberapa tantangan, seperti kebutuhan kalibrasi sensor yang konsisten, keterbatasan daya perangkat, kestabilan jaringan komunikasi, serta kebutuhan pengolahan data yang efektif di sisi perangkat maupun server. \textcite{stephan2025} menekankan bahwa penggunaan teknik komputasi efisien dan manajemen daya berbasis kontrol otomatis dapat mengatasi sebagian tantangan tersebut, khususnya pada sistem yang beroperasi dalam kondisi terbatas seperti gerobak makanan dan kantin kecil.
+
+Secara keseluruhan, IoT menyediakan kerangka kerja yang kokoh untuk pengawasan kualitas makanan di lingkungan kantin. Integrasi sensor, mikrokontroler, dan jaringan komunikasi menciptakan sistem \textit{monitoring} yang objektif, responsif, dan terukur. Dengan menggabungkan IoT dengan pendekatan \textit{e-nose} dan analisis \textit{machine learning}, \textit{smart canteen} dapat memantau kondisi makanan secara menyeluruh serta menjaga keamanan pangan sesuai standar HACCP dan Codex Alimentarius.
+
+\section{Machine Learning untuk Klasifikasi Kualitas Pangan}
+
+Perkembangan teknologi sensor dan \textit{Internet of Things} (IoT) membuka peluang besar bagi pemanfaatan \textit{machine learning} (ML) dalam menilai kondisi dan kualitas makanan secara otomatis. \textit{Machine learning} mampu mengenali pola kompleks pada data sensor yang tidak dapat diidentifikasi secara visual atau manual, sehingga sangat sesuai digunakan untuk mendeteksi perubahan kualitas makanan akibat proses pembusukan. Pada lingkungan kantin, metode ini dapat memberikan penilaian objektif mengenai kesegaran pangan dan mendukung pengambilan keputusan yang lebih cepat dalam konteks keamanan makanan.
+
+Penggunaan \textit{machine learning} dalam klasifikasi \textit{spoilage} telah diimplementasikan dalam berbagai penelitian. \textcite{hasan2012} menunjukkan bahwa pola emisi gas dari daging sapi dan ikan yang membusuk dapat dipetakan menggunakan \textit{electronic nose} berbasis sensor MOS. Dalam studi tersebut, tiga model ML diuji—\textit{Artificial Neural Network} (ANN), \textit{Support Vector Machine} (SVM), dan \textit{K-Nearest Neighbor} (KNN). Hasilnya, KNN memberikan kinerja terbaik dengan akurasi 96,2\%, mengungguli ANN maupun SVM. Temuan ini menegaskan bahwa algoritma sederhana seperti KNN dapat bekerja sangat baik ketika pola data sensor cukup terpisah dan jumlah fitur tidak terlalu tinggi. Penelitian tersebut juga menekankan pentingnya proses ekstraksi fitur \textit{steady-state} dari sinyal sensor untuk meningkatkan performa klasifikasi.
+
+Penelitian \textcite{stephan2025} menunjukkan gambaran lebih komprehensif mengenai bagaimana \textit{machine learning} diaplikasikan dalam sistem IoT untuk pemantauan kesegaran pangan. Dalam studi tersebut, sensor lingkungan dan sensor gas (MQ2, MQ9, MQ135, MQ138) digunakan untuk membangun \textit{dataset} multivariat yang mencerminkan kondisi produk segar selama penyimpanan. Model \textit{Decision Tree} digunakan sebagai model dasar, kemudian dikembangkan dalam berbagai skema \textit{federated learning}. Keunggulan \textit{Decision Tree} terletak pada kemampuannya menangani data \textit{non-linear} serta memberikan interpretabilitas melalui struktur pohon keputusan. Model ini juga menunjukkan performa tinggi ketika diintegrasikan dalam \textit{ensemble} maupun \textit{meta-learning}, mencapai akurasi hingga 99,97\%. Penelitian tersebut memperlihatkan bagaimana ML tidak hanya membantu mengenali \textit{spoilage}, tetapi juga mendukung arsitektur pemrosesan terdistribusi.
+
+Di sisi lain, berbagai penelitian menyatakan bahwa \textit{machine learning} memiliki peran penting dalam meningkatkan efektivitas sistem \textit{monitoring} pangan berbasis IoT. \textcite{vitri2025} menggarisbawahi bahwa integrasi ML dengan sensor data dapat digunakan untuk mendeteksi pola ketidakwajaran (\textit{anomaly detection}) atau untuk melakukan klasifikasi kondisi makanan dalam sistem manajemen \textit{food waste}. Teknologi ML membantu menentukan apakah suatu pangan masih layak konsumsi, membutuhkan tindakan penanganan, atau harus dibuang sesuai standar keamanan pangan. Pendekatan analitis seperti ini memungkinkan lembaga maupun penyedia layanan kantin membuat keputusan lebih akurat dan sistematis.
+
+Algoritma yang umum digunakan dalam klasifikasi kualitas pangan antara lain \textit{logistic regression}, \textit{decision tree}, \textit{random forest}, dan KNN. \textit{Logistic regression} memberikan interpretasi yang sederhana dan cocok untuk data yang relatif \textit{linear}. \textit{Decision tree} menawarkan kemampuan pemisahan fitur yang jelas, sedangkan \textit{random forest} memperbaiki stabilitas dengan menggabungkan banyak pohon keputusan. KNN, seperti yang dibuktikan \textcite{hasan2012}, dapat menghasilkan akurasi tinggi pada data sensor yang memiliki \textit{cluster} pola yang kuat. Pemilihan algoritma sangat bergantung pada karakteristik data, termasuk keberadaan \textit{noise}, jumlah fitur, dan distribusi kelas pada \textit{dataset}.
+
+Selain algoritma klasifikasi, keberhasilan sistem \textit{machine learning} juga ditentukan oleh tahapan pra-proses seperti normalisasi data, reduksi \textit{noise}, dan pemilihan fitur. Dalam penelitian \textit{e-nose}, ekstraksi nilai \textit{steady-state} dari sinyal sensor terbukti meningkatkan \textit{robustness} model, sedangkan dalam sistem IoT berbasis \textit{vending cart}, pendekatan seperti kalibrasi sensor, deteksi \textit{outlier}, dan penanganan data hilang menjadi bagian penting yang menentukan kualitas hasil belajar. Dengan data yang bersih dan representatif, model ML mampu mengungkap hubungan \textit{non-linear} antara kondisi lingkungan, komposisi gas volatil, dan tingkat kerusakan makanan.
+
+Dengan demikian, \textit{machine learning} menjadi komponen penting dalam sistem pemantauan pangan modern. ML tidak hanya memberikan prediksi \textit{spoilage} yang akurat, tetapi juga mendukung implementasi sistem \textit{smart canteen} yang lebih responsif terhadap perubahan kondisi makanan. Integrasi ML dan data sensor membuka peluang bagi penerapan pemantauan kualitas pangan yang bersifat otomatis, objektif, serta selaras dengan prinsip keamanan pangan seperti HACCP dan Codex Alimentarius.
+
+\section{Sensor Fusion dan Feature Extraction dalam Freshness Detection (Fokus Multi-Sensor Gas)}
+
+Pendekatan \textit{multi-sensor gas} merupakan inti dari berbagai sistem deteksi kesegaran pangan berbasis \textit{electronic nose} (\textit{e-nose}). Prinsipnya adalah bahwa proses pembusukan makanan menghasilkan berbagai senyawa volatil yang berbeda—seperti ammonia, hidrogen, alkohol, sulfur volatil, dan \textit{volatile organic compounds} (VOC) lainnya. Setiap jenis sensor gas memiliki sensitivitas terhadap gas tertentu, sehingga kombinasi beberapa sensor digunakan untuk menangkap spektrum aroma yang lebih lengkap. Penggabungan informasi ini secara kolektif dikenal sebagai \textit{sensor fusion}.
+
+Pada sistem \textit{e-nose}, \textit{sensor fusion} berfungsi untuk menghasilkan \textquotedblleft\textit{fingerprint} aroma\textquotedblright yang khas bagi setiap kondisi makanan. Daripada mengandalkan satu sensor MQ yang hanya peka terhadap satu atau dua jenis gas, sistem \textit{multi-sensor} memadukan respons dari berbagai MQ—misalnya MQ2, MQ3, MQ4, MQ8, MQ9, dan MQ135—untuk memperoleh pola sinyal yang lebih kaya. Pendekatan ini membuat sistem lebih tangguh terhadap variasi komposisi gas yang dihasilkan makanan, sehingga meningkatkan akurasi dalam membedakan antara makanan yang masih layak konsumsi dan yang sudah mengalami \textit{spoilage}.
+
+Penelitian \textcite{hasan2012} memberikan dasar kuat mengenai efektivitas \textit{multi-sensor gas} dalam deteksi kualitas makanan. Dalam penelitian tersebut, \textit{array} berisi delapan sensor MOS digunakan untuk mengidentifikasi perbedaan aroma antara daging sapi dan ikan dalam kondisi segar maupun membusuk. Hasilnya menunjukkan bahwa masing-masing sensor menghasilkan pola respon yang berbeda terhadap volatil tertentu, namun ketika dikombinasikan, pola tersebut membentuk representasi aroma yang stabil dan mudah diklasifikasikan oleh algoritma \textit{machine learning}. Temuan tersebut memperkuat konsep bahwa \textit{fusion} antar sensor gas mampu menangkap variasi VOC yang kompleks sehingga lebih akurat dalam mendeteksi \textit{spoilage}.
+
+\textcite{stephan2025} juga menggunakan pendekatan serupa dengan memanfaatkan empat sensor MQ (MQ2, MQ9, MQ135, dan MQ138) untuk memantau kualitas produk segar dalam sistem \textit{smart vending cart}. Analisis \textit{feature importance} pada penelitian tersebut menunjukkan bahwa sensor gas tertentu—khususnya MQ135 dan MQ138—memiliki kontribusi tinggi dalam menentukan tingkat kesegaran makanan karena peka terhadap ammonia dan toluene, dua gas yang sangat erat kaitannya dengan proses dekomposisi pangan. Hal ini menunjukkan bahwa meskipun jumlah sensor terbatas, \textit{fusion} antar sensor gas tetap mampu memberikan representasi yang kuat untuk membedakan berbagai tingkat kesegaran makanan.
+
+Agar data \textit{multi-sensor} dapat digunakan secara efektif oleh model klasifikasi, diperlukan proses \textit{feature extraction} untuk mereduksi \textit{noise} dan mengekstraksi informasi utama dari sinyal sensor. Salah satu metode yang banyak digunakan adalah mengambil nilai \textit{steady-state}—yakni nilai maksimum absolut atau nilai stabil dari kurva respon sensor setelah fase transien. Dalam penelitian \textcite{hasan2012}, teknik ini terbukti menghasilkan fitur yang konsisten dan menjadi masukan yang efektif untuk model ANN, SVM, dan KNN. Pendekatan tersebut sangat cocok untuk sensor MQ yang umumnya menunjukkan kurva respon naik dan stabil ketika mendeteksi gas pada konsentrasi tertentu.
+
+Selain itu, \textit{feature extraction} juga dapat mencakup proses seperti normalisasi sinyal, perataan menggunakan \textit{moving average}, dan eliminasi data anomali. Meskipun metode pengolahan data dapat bervariasi, tujuannya tetap sama: memastikan pola respon antar sensor gas dapat direpresentasikan secara jelas agar model \textit{machine learning} mampu memetakan hubungan antara pola VOC dan tingkat \textit{spoilage} makanan.
+
+Secara keseluruhan, \textit{sensor fusion} dan \textit{feature extraction} memainkan peran penting dalam sistem deteksi kesegaran pangan berbasis sensor gas. Integrasi beberapa sensor MQ memungkinkan sistem memperoleh gambaran lebih komprehensif mengenai emisi VOC dari makanan, sementara teknik ekstraksi fitur memastikan sinyal sensor dapat dianalisis secara efisien oleh algoritma klasifikasi. Pendekatan \textit{multi-sensor gas} ini sangat relevan untuk digunakan dalam penelitian pemantauan kualitas makanan di kantin, karena menawarkan metode deteksi yang cepat, \textit{non-destructive}, dan akurat dalam mengidentifikasi penurunan kualitas pangan.
+
+\section{Studi Sebelumnya}
+
+Beberapa penelitian terkait yang dijadikan sebagai referensi dalam penelitian tugas akhir dan rancangan modul sistem diuraikan di bawah ini.
+
+\input{table/2-2-studi-sebelumnya.tex}

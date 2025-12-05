@@ -3,9 +3,310 @@
 % ==========================================
 \chapter{RENCANA SELANJUTNYA}
 \label{chap:rencana-selanjutnya}
-Jelaskan secara detail langkah-langkah rencana selanjutnya, hal-hal yang diperlukan atau akan disiapkan, dan risiko dan mitigasinya, yang meliputi:
+
+\section{Rencana Implementasi}
+
+Pelaksanaan penelitian memerlukan perangkat keras, perangkat lunak, serta bahan pangan yang mendukung proses pengumpulan data, pemrosesan sinyal sensor, pelatihan model \textit{machine learning}, dan integrasi prototipe sistem.
+
+\subsection{Alat dan Bahan yang Diperlukan}
+
+Rincian alat dan bahan adalah sebagai berikut.
+
+\subsubsection{Perangkat Sensor}
+
 \begin{enumerate}
-\item	Rencana implementasi, termasuk alat dan bahan yang diperlukan, lingkungan, konfigurasi, biaya, dan sebagainya.
-\item	Desain pengujian dan evaluasi, misalnya metode verifikasi dan validasi.
-\item	Analisis risiko dan mitigasi, misalnya tindakan selanjutnya jika ada yang tidak berjalan sesuai rencana.
+\item MQ2 pendeteksi LPG, propane, methane, hydrogen, alcohol, smoke
+
+\item MQ3 pendeteksi ethanol, alcohol, smoke
+
+\item MQ4 pendeteksi methane CH$_4$ dan natural gas
+
+\item MQ8 pendeteksi hydrogen H$_2$
+
+\item MQ9 pendeteksi carbon monoxide CO dan methane
+
+\item MQ135 pendeteksi ammonia NH$_3$, nitrogen oxides, benzene, VOC, sulfide
 \end{enumerate}
+
+Sensor tersebut dipilih untuk mencakup gas utama pembusukan seperti ammonia, \textit{hydrogen sulfide}, methane, ethanol, dan VOC kompleks.
+
+\subsubsection{Mikrokontroler dan Perangkat Akuisisi Data}
+
+\begin{enumerate}
+\item ESP32 sebagai mikrokontroler pembaca sinyal sensor
+
+\item \textit{Breadboard} atau papan prototipe
+
+\item Kabel jumper \textit{male to male} dan \textit{male to female}
+
+\item \textit{Power supply} 5V atau USB sebagai sumber daya
+\end{enumerate}
+
+\subsubsection{Perangkat Jaringan dan IoT}
+
+\begin{enumerate}
+\item ESP32 sebagai modul komunikasi WiFi untuk pengiriman data sensor ke \textit{backend}
+
+\item WiFi \textit{router} atau \textit{hotspot} lokal untuk konektivitas jaringan selama eksperimen
+\end{enumerate}
+
+\subsubsection{Perangkat Komputasi untuk Pelatihan Model}
+
+\textbf{\textit{Hardware:}}
+
+\begin{enumerate}
+\item Laptop ASUS ROG Zephyrus G14
+
+\begin{enumerate}
+\item Processor AMD Ryzen 9 8945HS dengan 16 \textit{core}
+
+\item RAM 16 GB
+
+\item \textit{Storage} 512 GB SSD
+
+\item Sistem Operasi Windows 11 Home
+\end{enumerate}
+\vspace{1em}
+
+Laptop ini digunakan untuk pra-pemrosesan data, pelatihan model, evaluasi, dan integrasi prototipe.
+
+\end{enumerate}
+
+\textbf{\textit{Software} Pendukung:}
+\begin{enumerate}
+\item Python
+
+\item Jupyter Notebook
+
+\item \textit{Library} scikit-learn, NumPy, Pandas, Matplotlib
+
+\item Arduino IDE
+
+\item Supabase sebagai \textit{backend} basis data dan API
+\end{enumerate}
+
+\subsubsection{Bahan Uji}
+
+\begin{enumerate}
+\item Daging ayam mentah
+
+\item Daging ikan mentah
+
+\item Buah pisang
+
+\item Buah apel
+\end{enumerate}
+
+Setiap sampel diuji dalam kondisi \textit{fresh} dan \textit{spoiled}.
+
+\subsubsection{Material Pendukung Eksperimen}
+
+\begin{enumerate}
+\item Wadah tertutup atau \textit{container} untuk menempatkan makanan dan sensor
+
+\item Sarung tangan untuk penanganan sampel
+
+\item Alas kerja dan plastik pembungkus untuk memastikan kebersihan area eksperimen
+\end{enumerate}
+
+\subsection{Lingkungan dan Konfigurasi Sistem}
+
+Pelaksanaan penelitian ini membutuhkan lingkungan eksperimen yang terkontrol serta konfigurasi perangkat keras dan perangkat lunak yang mendukung proses pengumpulan data, komunikasi sensor, pelatihan model \textit{machine learning}, dan integrasi prototipe. Rincian lingkungan dan konfigurasi adalah sebagai berikut.
+
+\subsubsection{Lingkungan Eksperimen}
+
+\textbf{Ruangan tertutup dengan ventilasi minimal}
+
+Ruangan digunakan untuk mencegah gangguan aliran udara yang dapat mempengaruhi konsentrasi gas yang diukur oleh sensor.
+
+\textbf{Meja kerja bersih dan kering}
+
+Digunakan sebagai tempat perakitan rangkaian sensor, Arduino, dan ESP32.
+
+\textbf{Wadah tertutup atau \textit{container} sampel}
+
+Digunakan untuk menempatkan makanan dan sensor selama proses pengambilan data. Wadah membantu menjaga konsentrasi VOC tetap stabil.
+
+\textbf{Sumber listrik stabil}
+
+Disediakan melalui adaptor 5 volt atau USB untuk memberi daya pada Arduino Nano dan sensor.
+
+\textbf{Jaringan WiFi lokal}
+
+Diperlukan agar ESP32 dapat mengirimkan data sensor ke \textit{backend} Supabase.
+
+\subsubsection{Konfigurasi Perangkat Keras}
+
+\textbf{Rangkaian sensor}
+
+Sensor MQ2, MQ3, MQ4, MQ8, MQ9, dan MQ135 dipasang pada \textit{breadboard}, masing-masing terhubung ke pin analog Arduino Nano. Sensor diberi waktu pemanasan sesuai \textit{datasheet} sebelum digunakan.
+
+\textbf{Arduino Nano}
+
+Arduino berfungsi sebagai pengumpul data analog dari sensor dan mengonversinya menjadi data digital. Arduino mengirimkan data ke ESP32 menggunakan komunikasi serial.
+
+\textbf{ESP32}
+
+ESP32 menerima data dari Arduino dan mengirimkannya ke Supabase melalui koneksi WiFi. Format data dikirim dalam bentuk JSON atau \textit{payload} sederhana sesuai kebutuhan basis data.
+
+\textbf{Laptop ROG Zephyrus G14}
+
+Laptop digunakan untuk \textit{monitoring} data, pemrosesan awal, pelatihan model, evaluasi model, serta konfigurasi \textit{backend}. Laptop menjalankan \textit{environment} Python untuk analisis \textit{machine learning}.
+
+\subsubsection{Konfigurasi Perangkat Lunak}
+
+\textbf{Arduino IDE}
+
+Digunakan untuk memprogram Arduino Nano agar membaca sensor dan mengirim data ke ESP32.
+
+\textbf{\textit{Firmware} ESP32}
+
+\textit{Firmware} ditulis menggunakan Arduino IDE atau PlatformIO agar ESP32 dapat menerima data dari Arduino dan mengirimkannya ke Supabase menggunakan HTTP Request atau Realtime API.
+
+\textbf{Supabase}
+
+Supabase digunakan sebagai \textit{backend} dan basis data utama untuk menyimpan data sensor dan hasil prediksi model.
+
+\textbf{Python \textit{Environment}}
+
+Python digunakan untuk pra-pemrosesan data, eksplorasi data, pelatihan, dan evaluasi model dengan menggunakan \textit{library} seperti scikit-learn, NumPy, Pandas, dan Matplotlib.
+
+\textbf{Jupyter Notebook}
+
+Digunakan sebagai platform analisis interaktif untuk eksperimen \textit{machine learning}.
+
+\subsubsection{Prosedur Konfigurasi Sistem}
+
+\begin{enumerate}
+\item Merangkai seluruh sensor di atas \textit{breadboard} dan menghubungkannya ke pin analog Arduino Nano.
+
+\item Mengunggah \textit{sketch} Arduino untuk membaca data sensor dan mengirimkan nilai ADC ke ESP32.
+
+\item Mengonfigurasi ESP32 agar terhubung ke jaringan WiFi dan mengirimkan data ke Supabase.
+
+\item Menguji konektivitas antara sensor, Arduino, ESP32, dan Supabase untuk memastikan data masuk dengan benar.
+
+\item Melakukan \textit{debugging} dan penyesuaian pembacaan sensor sebelum proses pengumpulan data.
+
+\item Menyiapkan akun Supabase dan tabel basis data untuk menyimpan data sensor.
+
+\item Menyiapkan \textit{environment} Python pada laptop untuk pemrosesan data dan pelatihan model.
+\end{enumerate}
+
+\subsection{Estimasi Biaya Implementasi}
+
+Estimasi biaya diperlukan untuk mengetahui kebutuhan anggaran dalam pelaksanaan penelitian, khususnya untuk pembelian sensor, perangkat pendukung, serta sampel bahan pangan yang digunakan selama proses pengumpulan data. Tabel \ref{tbl:estimasi-biaya} berikut merangkum seluruh biaya yang diperlukan berdasarkan harga rata-rata dari platform Tokopedia.
+
+\input{table/5-1-estimasi-biaya.tex}
+
+Seluruh harga diambil dari estimasi rata-rata produk yang tersedia di Tokopedia (akses Desember 2025). Harga dapat berubah sewaktu-waktu sesuai ketersediaan pasar dan penjual.
+
+\subsection{Timeline Implementasi}
+
+\textit{Timeline} implementasi disusun untuk menggambarkan alur pengerjaan proyek secara menyeluruh, dimulai dari fase pemahaman masalah, pengolahan dan persiapan data, pembangunan model, hingga evaluasi dan komunikasi hasil. Secara garis besar, aktivitas penelitian terbagi antara tahap konseptual dan analitis yang dilakukan pada akhir tahun 2025, kemudian dilanjutkan dengan tahap teknis meliputi \textit{data preparation}, \textit{modelling}, dan \textit{evaluation} yang berlangsung pada awal hingga pertengahan 2026. Proses ditutup dengan penyusunan laporan dan finalisasi hasil penelitian. Penyusunan \textit{timeline} ini memastikan bahwa seluruh tahapan berjalan terstruktur, saling berurutan, dan mendukung penyelesaian penelitian secara efektif.
+
+\begin{figure}[t]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.9\textwidth]{image/Timeline Pengembangan.png}
+	\caption{Timeline implementasi penelitian}
+	\label{gambar:timeline-implementasi}
+\end{figure}
+
+\section{Desain Pengujian dan Evaluasi}
+
+Desain pengujian dan evaluasi disusun untuk memastikan bahwa sistem yang dikembangkan dapat diverifikasi dan divalidasi secara komprehensif sesuai kebutuhan fungsional dan nonfungsional yang telah ditetapkan. Pengujian dirancang untuk mengevaluasi keandalan alur kerja sistem berbasis sensor hingga dashboard, serta mengukur performa model machine learning dalam mengklasifikasikan kondisi makanan.
+
+Dalam penelitian ini, proses evaluasi direncanakan menggunakan tiga skenario pengujian utama, yang masing-masing menilai aspek berbeda dari prototipe sistem.
+
+\subsection{Skenario Pengujian}
+
+\subsubsection{Skenario 1: Pengujian Fungsional Sistem}
+
+Skenario pengujian fungsional bertujuan untuk memverifikasi bahwa seluruh alur kerja sistem IoT–ML–Dashboard berjalan sesuai rancangan, mulai dari pembacaan gas oleh sensor hingga keluarnya hasil prediksi pada dashboard.
+
+Pengujian dilakukan dengan metode pengujian manual berbasis interaksi langsung dengan perangkat fisik dan antarmuka sistem. Alur yang divalidasi mencakup:
+
+\begin{enumerate}
+\item Sensor MQ membaca sinyal gas dari sampel makanan.
+
+\item ESP32 menerima data sensor dari Arduino dan mengirimkannya ke \textit{backend} Supabase.
+
+\item \textit{Backend} menyimpan data dan meneruskan input ke model \textit{machine learning}.
+
+\item Model menghasilkan prediksi kondisi makanan (\textit{fresh} atau \textit{spoiled}).
+
+\item Dashboard menampilkan hasil prediksi beserta rekomendasi tindakan (\textit{storing}, \textit{donation}, \textit{disposal}).
+\end{enumerate}
+
+Evaluasi bersifat kualitatif, di mana setiap langkah dinilai:
+
+\begin{enumerate}
+\item Berhasil atau tidak berhasil
+
+\item Sesuai atau tidak sesuai dengan kebutuhan fungsional sistem
+
+\item Hasil dicatat dalam format \textit{pass}–\textit{fail} untuk setiap komponen alur.
+\end{enumerate}
+
+\subsubsection{Skenario 2: Pengujian Kinerja Model \textit{Machine Learning}}
+
+Skenario pengujian kinerja model dirancang untuk mengukur performa prediktif dari model \textit{machine learning} yang dibangun menggunakan data sensor MQ. Skenario ini bertujuan untuk memvalidasi pemenuhan kebutuhan nonfungsional terkait akurasi klasifikasi.
+
+Pengujian dilakukan secara \textit{offline}, menggunakan skrip evaluasi pada himpunan data uji yang tidak digunakan selama pelatihan.
+
+Kinerja model akan dievaluasi menggunakan metrik klasifikasi standar:
+
+\begin{enumerate}
+\item \textit{Accuracy}
+
+\item \textit{Precision}
+
+\item \textit{Recall}
+
+\item F1-\textit{score}
+
+\item \textit{Confusion Matrix}
+
+\item ROC Curve dan AUC (\textit{jika applicable} untuk model terbaik)
+
+\item \textit{Cross-validation} untuk meningkatkan keandalan evaluasi
+\end{enumerate}
+
+Pengujian ini memastikan bahwa model mampu mengklasifikasikan makanan sebagai \textit{fresh} atau \textit{spoiled} dengan tingkat akurasi yang dapat diterima dan konsisten pada data yang belum pernah dilihat.
+
+\subsubsection{Skenario 3: Pengujian Penerimaan Pengguna (\textit{User Acceptance Test})}
+
+Skenario pengujian penerimaan pengguna dirancang untuk mengevaluasi usabilitas dan kegunaan dashboard Smart Canteen dari sudut pandang calon pengguna akhir (misalnya staf kantin, mahasiswa, atau kelompok pengguna internal kampus).
+
+Pengujian dilakukan melalui:
+
+\textbf{\textit{Sesi interaksi pengguna dengan dashboard}}
+
+Pengguna diminta menyelesaikan serangkaian tugas sederhana, seperti membaca hasil prediksi, menafsirkan rekomendasi tindakan, dan memahami visualisasi data.
+
+\textbf{\textit{Pengisian kuesioner pasca pengujian}}
+
+Kuesioner menggunakan skala Likert untuk menilai:
+
+\begin{enumerate}
+\item Kemudahan penggunaan
+
+\item Kejelasan informasi
+
+\item Kenyamanan \textit{interface}
+
+\item Pemahaman terhadap rekomendasi sistem
+\end{enumerate}
+
+\textbf{\textit{Pengumpulan umpan balik kualitatif}}
+
+Berupa komentar, saran, dan persepsi pengguna mengenai prototipe sistem.
+
+Metrik evaluasi adalah gabungan kuantitatif (skor rata-rata dari kuesioner) dan kualitatif (observasi dan komentar pengguna).
+
+\subsection{Ringkasan Tujuan Setiap Skenario}
+
+Tabel \ref{tbl:ringkasan-tujuan-skenario} berikut merangkum tujuan utama dan metode evaluasi untuk masing-masing skenario pengujian.
+
+\input{table/5-2-ringkasan-tujuan-skenario.tex}

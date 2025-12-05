@@ -1,0 +1,36 @@
+\begin{longtable}{|p{2.5cm}|p{2.8cm}|p{3.2cm}|p{3.2cm}|}
+\caption{Studi Sebelumnya}\label{tbl:studi-sebelumnya} \\
+\hline
+\textbf{Judul (Penulis)} & \textbf{Metodologi} & \textbf{Kontribusi Utama} & \textbf{Keterbatasan} \\
+\hline
+\endfirsthead
+
+\caption{Studi Sebelumnya (lanjutan)} \\
+\hline
+\textbf{Judul (Penulis)} & \textbf{Metodologi} & \textbf{Kontribusi Utama} & \textbf{Keterbatasan} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{4}{r}{\textit{Bersambung ke halaman berikutnya}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+Food Waste Management Strategy with Green and Digital Technology (Vitri Tundjungsih, 2025) &
+Perbandingan 5 pendekatan digital: Computer Vision, Sensor-based Monitoring, Sensor Fusion + ML, Object Detection, dan \textit{Rule-based Systems}; menggunakan kerangka AI + IoT untuk \textit{edibility} detection dan \textit{smart sorting} &
+Memberikan model strategi yang menggabungkan AI, IoT, dan \textit{green technology} untuk mendeteksi kelayakan makanan (appearance, smell, gas, temperature) dan menentukan jalur pemanfaatan (donation, animal feed, composting) &
+Pendekatan sebagian besar konseptual; model Computer Vision \& sensor fusion belum diimplementasikan secara penuh. Membutuhkan dataset besar dan berkualitas tinggi. \\
+\hline
+Meat and Fish Freshness Inspection System Based on Odor Sensing (Najam ul Hasan, Naveed Ejaz, Waleed Ejaz, Hyung Seok Kim — 2012) &
+Pengembangan \textit{electronic nose} berbasis MOS gas sensor array (8 sensor); preprocessing (moving average filtering); \textit{feature extraction} (steady-state math); perbandingan 3 model klasifikasi (ANN, SVM, KNN) &
+Menghasilkan sistem inspeksi kesegaran daging rendah biaya yang mampu mendeteksi daging busuk melalui pola gas dengan akurasi tertinggi (96,6\%); menyediakan arsitektur lengkap (handheld device + server) untuk inspeksi makanan di butcher shop &
+Hanya diuji pada dua jenis makanan (beef dan fish); tidak menangani klasifikasi multi-item; membutuhkan chamber dan kondisi eksperimen terkontrol; model ANN/SVM kurang optimal; belum diuji pada lingkungan kantin atau makanan olahan \\
+\hline
+\textit{Federated learning}-driven IoT system for automated freshness monitoring in resource-constrained vending carts (Stephan \textit{dkk.}, 2025) &
+IoT + gas sensors MQ2 (Hydrogen), MQ9 (CO), MQ135 (Ammonia), MQ138 (Toluene) untuk memantau emisi \textit{spoilage}. Decision Tree classifier digunakan sebagai local model setiap cart &
+Mengonfirmasi efektivitas MO-series gas sensors untuk mendeteksi sinyal kimia pembusukan secara \textit{real-time}. Menunjukkan bahwa kombinasi gas sensor + ML dapat menghasilkan klasifikasi freshness akurasi sangat tinggi (hingga 99.97\%). &
+Sistem sangat kompleks (FL + ensemble), kurang cocok untuk implementasi UMKM/kantin sederhana. \\
+\hline
+\end{longtable}

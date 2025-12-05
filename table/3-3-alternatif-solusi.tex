@@ -1,0 +1,29 @@
+\begin{longtable}{|p{1.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\caption{Alternatif Solusi untuk Sistem Pemantauan Kesegaran Makanan}\label{tbl:alternatif-solusi} \\
+\hline
+\textbf{No.} & \textbf{Solusi} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+\hline
+\endfirsthead
+
+\caption{Alternatif Solusi untuk Sistem Pemantauan Kesegaran Makanan (lanjutan)} \\
+\hline
+\textbf{No.} & \textbf{Solusi} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{4}{r}{\textit{Bersambung ke halaman berikutnya}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+1 & \textbf{\textit{Rule-Based System}} (\textit{threshold} manual per sensor MQ) & Mudah diimplementasikan pada skala kecil, tidak butuh \textit{training} model, eksekusi sangat cepat. & Tidak akurat untuk pola gas yang kompleks, tidak \textit{scalable}, \textit{threshold} tidak stabil antar makanan. \\
+\hline
+2 & \textbf{\textit{Single-Model ML}} Sederhana (\textit{Logistic Regression}) & Stabil untuk \textit{dataset} kecil, cepat dan ringan, hasil mudah diinterpretasikan, selaras dengan SENSOR DOC. & Kurang mampu menangkap pola \textit{non-linear} pada data sensor. \\
+\hline
+3 & \textbf{\textit{Multi-Model ML}} Klasik (LR, RF, KNN, DT) & Lebih fleksibel, dapat mengatasi pola \textit{non-linear}, mendukung pemilihan model terbaik melalui evaluasi, cocok untuk \textit{dataset} kecil seperti sensor MQ. & Membutuhkan proses \textit{training}, \textit{tuning}, dan pemetaan performa antar model. \\
+\hline
+4 & \textbf{\textit{Deep Learning}} (ANN / 1D-CNN) & Performa tinggi pada \textit{dataset} besar, mampu belajar pola kompleks. & Tidak cocok untuk \textit{dataset} kecil, rawan \textit{overfitting}, komputasi besar, tidak selaras dengan target \textit{low-cost Smart Canteen}. \\
+\hline
+\end{longtable}

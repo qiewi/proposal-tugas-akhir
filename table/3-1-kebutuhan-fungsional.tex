@@ -1,0 +1,29 @@
+\begin{longtable}{|p{1.5cm}|p{4cm}|p{8cm}|}
+\caption{Kebutuhan Fungsional Sistem}\label{tbl:kebutuhan-fungsional} \\
+\hline
+\textbf{ID} & \textbf{Nama Fitur} & \textbf{Deskripsi} \\
+\hline
+\endfirsthead
+
+\caption{Kebutuhan Fungsional Sistem (lanjutan)} \\
+\hline
+\textbf{ID} & \textbf{Nama Fitur} & \textbf{Deskripsi} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\textit{Bersambung ke halaman berikutnya}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+FR01 & Pemrosesan Data Sensor & Sistem harus mampu membaca dan mengelola input dari sensor MQ (MQ8, MQ135, MQ4, MQ9, MQ2, MQ3) berupa nilai analog dan digital untuk mendeteksi pola gas volatil yang berkaitan dengan \textit{spoilage}. \\
+\hline
+FR02 & Klasifikasi Kesegaran Makanan & Sistem harus menerapkan model \textit{machine learning} untuk mengklasifikasikan kondisi makanan ke dalam dua kelas, \textit{fresh} atau \textit{spoiled} secara otomatis berdasarkan data sensor. \\
+\hline
+FR03 & Integrasi Hasil Klasifikasi & Sistem harus mampu menghasilkan rekomendasi keputusan \textit{storing}, \textit{donation}, \textit{disposal} berdasarkan hasil prediksi kesegaran makanan. \\
+\hline
+FR04 & Visualisasi Hasil & Sistem harus mampu menampilkan status kesegaran makanan dalam bentuk dashboard sederhana (misalnya indikator warna: hijau = \textit{fresh}, merah = \textit{spoiled}). \\
+\hline
+\end{longtable}

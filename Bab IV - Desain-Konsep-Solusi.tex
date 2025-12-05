@@ -3,7 +3,145 @@
 % ==========================================
 \chapter{DESAIN KONSEP SOLUSI}
 \label{chap:desain-konsep-solusi}
-Ilustrasikan desain konsep solusi dalam bentuk model konseptual dan penjelasan secara ringkas, 
-beserta perbedaannya dengan sistem saat ini. Ilustrasi harus dapat dibandingkan (\textit{before} and \textit{after}). 
-Karena masih berupa proposal, bab ini hanya berisi gambar desain konsep solusi tersebut dan 
-penjelasan perbandingannya dengan gambar sistem yang ada saat ini (yang tergambar di awal Bab \ref{chap:analisis-masalah}).
+
+\section{Desain Konsep Solusi – Pembuatan Model \textit{Machine Learning}}
+
+Desain konsep solusi untuk pembuatan model \textit{machine learning} terdiri dari beberapa tahapan utama yang membentuk alur kerja terstruktur dari pengumpulan data hingga integrasi hasil model ke dalam prototipe sistem. Alur tersebut dapat dilihat pada Gambar \ref{gambar:pemodelan-ml} berikut.
+
+\begin{figure}[h]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[width=0.95\textwidth]{image/Pemodelan Machine Learning.png}
+  \caption{Alur desain konsep solusi pembuatan model \textit{machine learning}}
+  \label{gambar:pemodelan-ml}
+\end{figure}
+
+\subsection{Pengumpulan \textit{Dataset} (\textit{Data Understanding})}
+
+Tahap awal melibatkan proses pengambilan data gas VOC (\textit{volatile organic compounds}) dari enam sensor MQ (MQ2, MQ3, MQ4, MQ8, MQ9, MQ135). Pengumpulan data dilakukan pada empat jenis sampel pangan: ayam mentah, ikan mentah, buah pisang, dan buah apel, masing-masing dalam kondisi \textit{fresh} dan \textit{spoiled}. Tahap ini bertujuan memahami pola dasar perubahan gas pada setiap komoditas.
+
+\subsection{Pra-pemrosesan Data (\textit{Data Preparation})}
+
+Data mentah sensor perlu melalui tahapan pembersihan dan persiapan agar dapat digunakan untuk pelatihan model. Tahapan ini mencakup:
+
+\begin{enumerate}
+\item \textbf{\textit{Cleaning sensor data}:} menghapus \textit{noise}, \textit{outlier}, serta koreksi ketidakstabilan sensor.
+
+\item \textbf{Normalization:} menyamakan rentang nilai antar sensor agar model tidak bias terhadap skala tertentu.
+
+\item \textbf{\textit{Feature Filtering}:} menghilangkan fitur yang \textit{redundant} atau tidak informatif untuk mengoptimalkan performa model.
+\end{enumerate}
+
+\subsection{Transformasi Fitur}
+
+Setelah data dibersihkan, dilakukan transformasi fitur untuk mengekstraksi pola yang lebih representatif dari pembacaan sensor. Tahap ini membantu meningkatkan kemampuan model dalam mengenali pola VOC pembusukan.
+
+\subsection{Pemodelan dan Pelatihan}
+
+Data yang sudah diproses selanjutnya digunakan untuk melatih beberapa model klasifikasi, yaitu:
+
+\begin{enumerate}
+\item \textit{Logistic Regression}
+
+\item \textit{Random Forest}
+
+\item \textit{Decision Tree}
+
+\item K-Nearest Neighbors (KNN)
+\end{enumerate}
+
+Tahap ini menjadi inti dari proses pembentukan kemampuan sistem dalam mengklasifikasikan kondisi makanan.
+
+\subsection{Klasifikasi Model dan Evaluasi}
+
+\textit{Dataset} dibagi menggunakan skema 80\% \textit{train} dan 20\% \textit{test} untuk menguji performa model. Metrik evaluasi seperti akurasi, F1-\textit{score}, dan \textit{confusion matrix} digunakan untuk menilai kualitas model. Model terbaik dipilih berdasarkan performa paling konsisten.
+
+\subsection{Integrasi dan Prototipe}
+
+Model yang sudah terlatih kemudian diintegrasikan ke dalam sistem prototipe pemantauan makanan berbasis sensor. Integrasi ini memungkinkan sistem memberikan rekomendasi kondisi makanan secara \textit{real-time} di lingkungan kantin.
+
+\section{Perbandingan Sistem Saat Ini dan Desain Konsep Solusi}
+
+Bagian ini membahas perbedaan antara sistem saat ini yang digunakan dalam lingkungan kantin dengan desain konsep solusi yang diusulkan. Karena penelitian ini masih pada tahap proposal, perbandingan dilakukan pada level konseptual untuk menggambarkan bagaimana sistem yang diusulkan mampu memperbaiki kekurangan pada proses saat ini.
+
+\subsection{Sistem Saat Ini (\textit{Before})}
+
+\begin{figure}[h]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{image/Future Post Dining.png}
+	\caption{Alur post-dining workflow sistem kantin di masa depan}
+	\label{gambar:current-postdining}
+\end{figure}
+
+Pada kondisi aktual, sistem pengelolaan makanan di kantin belum memiliki mekanisme atau teknologi yang digunakan untuk memantau kualitas makanan maupun mendukung keputusan \textit{storing}, \textit{donation}, atau \textit{disposing}. Seluruh proses masih berjalan secara manual berdasarkan pengalaman staf dan tanpa dukungan data objektif. Gambar \ref{gambar:current-postdining} merupakan rancangan konsep Smart Canteen yang diharapkan di masa depan.
+
+Adapun kondisi sistem yang sebenarnya di lapangan dapat dirangkum sebagai berikut:
+
+\begin{enumerate}
+\item \textbf{Tidak ada sistem deteksi kualitas makanan.}
+
+Penilaian kesegaran bahan makanan seperti ayam, ikan, pisang, dan apel masih dilakukan dengan cara konvensional, yakni mencium aroma, melihat warna, dan memperkirakan kesegaran berdasarkan intuisi.
+
+\item \textbf{Tidak ada sensor atau alat ukur \textit{spoilage}.}
+
+Kantin belum memiliki alat untuk membaca indikator gas pembusukan seperti ammonia (NH$_3$), \textit{hydrogen sulfide} (H$_2$S), methane (CH$_4$), ethanol, maupun VOC lainnya.
+
+\item \textbf{Tidak ada alur otomasi keputusan.}
+
+Keputusan untuk menyimpan, mendonasikan, atau membuang makanan dilakukan tanpa pedoman berbasis data, sehingga lebih rentan salah keputusan atau keterlambatan identifikasi makanan rusak.
+
+\item \textbf{Tidak ada penyimpanan data dan histori.}
+
+Tidak tersedia \textit{backend}, basis data, \textit{gateway}, maupun sistem pencatatan digital yang dapat menyimpan informasi terkait kondisi makanan.
+
+\item \textbf{Tidak ada \textit{dashboard} atau mekanisme \textit{monitoring}.}
+
+Kantin tidak memiliki tampilan digital yang dapat membantu staf dalam memonitor kondisi makanan secara terpusat atau \textit{real-time}.
+\end{enumerate}
+
+Dengan kata lain, sistem saat ini berada pada titik tanpa teknologi, di mana belum ada integrasi sensor, \textit{machine learning}, maupun alur keputusan berbasis data. Inilah yang menjadi dasar kebutuhan solusi pada penelitian ini untuk memberikan fondasi awal menuju implementasi Smart Canteen yang sesungguhnya.
+
+\newpage
+
+\subsection{Desain Konsep Solusi (\textit{After})}
+
+\begin{figure}[h]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.95\textwidth]{image/Desain Konsep Solusi.png}
+	\caption{Desain konsep solusi sistem deteksi kondisi makanan berbasis \textit{multi-gas sensor} dan \textit{machine learning}}
+	\label{gambar:desain-solusi}
+\end{figure}
+
+Desain konsep solusi yang diusulkan ditampilkan pada Gambar \ref{gambar:desain-solusi}, yang menggambarkan bagaimana sistem berbasis sensor VOC, mikrokontroler, IoT \textit{gateway}, serta model \textit{machine learning} digunakan untuk mendukung pengambilan keputusan kondisi makanan pada lingkungan Smart Canteen.
+
+Desain konsep solusi ini menunjukkan alur pemrosesan data mulai dari tahap pengukuran gas, pengiriman data, pemrosesan \textit{machine learning}, hingga penyampaian hasil pada \textit{dashboard}. Adapun komponen utama yang berperan di dalam sistem ini meliputi:
+
+\begin{enumerate}
+\item \textbf{\textit{Multi-Gas Sensor} (MQ2, MQ3, MQ4, MQ8, MQ9, MQ135)}
+
+Sensor mendeteksi gas-gas volatil seperti ammonia (NH$_3$), \textit{hydrogen sulfide} (H$_2$S), methane (CH$_4$), ethanol, CO, serta VOC kompleks lainnya yang berkaitan dengan pembusukan makanan.
+
+\item \textbf{Arduino Nano (\textit{Microcontroller})}
+
+Arduino bertindak sebagai \textit{node} akuisisi data. Perangkat ini membaca sinyal analog/digital dari sensor, melakukan konversi, kemudian mengirimkan data ke IoT \textit{Gateway}. Arduino juga berfungsi sebagai penghubung antara sensor fisik dan lapisan komputasi berikutnya.
+
+\item \textbf{IoT \textit{Gateway} dan \textit{Backend Service}}
+
+Komponen ini menerima data dari Arduino, melakukan \textit{formatting} dan validasi, kemudian meneruskannya ke model \textit{machine learning} untuk dianalisis lebih lanjut. IoT \textit{Gateway} menjadi penghubung antara sistem fisik dan komponen berbasis \textit{cloud}/server.
+
+\item \textbf{\textit{Machine Learning} Model}
+
+Model ML yang telah dilatih memproses data gas untuk menghasilkan prediksi kondisi makanan (\textit{fresh} atau \textit{spoiled}). Hasil prediksi dikirimkan kembali ke basis data untuk penyimpanan dan ke \textit{dashboard} untuk ditampilkan.
+
+\item \textbf{\textit{Database}}
+
+Menyimpan data hasil pembacaan sensor serta hasil prediksi model. Data ini dapat digunakan untuk audit, \textit{monitoring} historis, maupun pengembangan sistem di masa depan.
+
+\item \textbf{Smart Canteen \textit{Dashboard} (\textit{Front-End})}
+
+\textit{Dashboard} menampilkan rekomendasi \textit{storing}, \textit{donation}, atau \textit{disposing} berdasarkan hasil prediksi kualitas makanan. Sistem ini membantu pengelola kantin dalam mengambil keputusan yang lebih cepat, akurat, dan berbasis data.
+\end{enumerate}
+
+Dengan struktur ini, sistem yang diusulkan menyediakan alur deteksi makanan secara objektif dan \textit{real-time}, berbeda dengan sistem sebelumnya yang sepenuhnya bergantung pada penilaian manual.

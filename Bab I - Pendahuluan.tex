@@ -5,13 +5,16 @@
 \label{chap:pendahuluan}
 % --- Latar Belakang ---
 \section{Latar Belakang}
-Peran kantin tidak hanya menyediakan makanan, tetapi juga mendukung keamanan dan kenyamanan konsumsi dari para konsumennya. Kantin merupakan fasilitas penting dalam mendukung aktivitas civitas akademika di berbagai institusi. Selain menyediakan kebutuhan konsumsi harian, kantin memiliki peran dalam menjaga keamanan pangan, efisiensi operasional, dan keberlanjutan lingkungan.
 
-Pada konteks kantin modern, \textit{food waste} tidak hanya berdampak pada lingkungan, namun juga memiliki implikasi terhadap tiga aspek penting. Data FAO dan UNEP menunjukkan masalah \textit{food waste} telah menjadi isu global yang signifikan, dengan 1,3 miliar ton makanan terbuang setiap tahun secara global, dan 25\% diantaranya merupakan \textit{food waste} yang dapat dicegah dari sektor layanan makanan. Dalam menjawab tantangan ini, terdapat tiga strategi utama yang perlu diterapkan, yakni meningkatkan biaya operasional, mengurangi nilai gizi dan keamanan pangan, serta menurunkan efisiensi proses bisnis.
+Dalam operasional kantin, salah satu tantangan terbesar adalah memastikan bahwa makanan yang disajikan tetap aman dan layak konsumsi sepanjang siklus penyajiannya. Makanan yang telah melalui proses masak, penyimpanan, dan penyajian memiliki potensi mengalami penurunan kualitas hingga pembusukan (\textit{spoilage}), yang sering kali tidak terlihat secara kasat mata. Kondisi ini berbahaya karena makanan yang terlihat baik secara visual bisa saja telah terkontaminasi atau mengalami perubahan kimia dan mikrobiologis yang membahayakan kesehatan konsumen.
 
-Di tingkat \textit{global}, Codex Alimentarius (2020) dan pendekatan HACCP (\textit{Hazard Analysis and Critical Control Points}) menetapkan standar untuk memastikan keamanan pangan. Keputusan Menteri Kesehatan No. 942/2003 dan No. 1429/2006 menyatakan bahwa kantin ideal seharusnya mampu menjamin kelayakan makanan, higienitas penyajian, serta pengelolaan limbah pangan dengan baik selaras dengan prinsip keamanan pangan modern. Strategi identifikasi bahaya mencakup pemantauan kondisi makanan sepanjang siklus penyajiannya, khususnya terkait deteksi makanan yang masih baik (\textit{not spoiled}) serta makanan yang sudah tidak layak konsumsi (\textit{spoiled}).
+Di banyak kantin, termasuk dalam ekosistem Smart Canteen yang sedang berkembang, penilaian terhadap kesegaran makanan masih dilakukan secara manual, berbasis indra penciuman, pengamatan visual, atau pengalaman subjektif penjual. Metode ini tidak hanya kurang akurat dan tidak konsisten, tetapi juga tidak memenuhi standar keamanan pangan yang menuntut proses pemantauan yang objektif, terukur, dan terdokumentasi. Ketidakmampuan mendeteksi \textit{spoilage} secara dini dapat meningkatkan risiko keracunan makanan, menciptakan ketidaknyamanan konsumen, serta berdampak negatif pada reputasi layanan kantin.
 
-Smart Canteen yang ideal membutuhkan sistem pemantauan kondisi makanan yang objektif dan sesuai standar nasional serta global untuk memastikan keamanan pangan dan mengidentifikasi terjadinya pembusukannya secara \textit{real-time} dan otomatis.
+Isu ini semakin relevan mengingat data FAO dan UNEP menunjukkan bahwa pembusukan pangan tidak hanya menimbulkan risiko kesehatan, tetapi juga menyumbang porsi signifikan dari \textit{food waste} global. Lebih dari 25\% \textit{food waste} pada sektor layanan makanan sebenarnya dapat dicegah melalui sistem pemantauan kondisi makanan yang lebih akurat dan ilmiah.
+
+Di tingkat internasional, Codex Alimentarius dan prinsip \textit{Hazard Analysis and Critical Control Points} (HACCP) menekankan pentingnya pengendalian titik-titik kritis, termasuk pemantauan kualitas makanan setelah dimasak dan disajikan. Regulasi nasional seperti Keputusan Menteri Kesehatan No. 942/2003 dan No. 1429/2006 juga mengharuskan setiap kantin memastikan kelayakan dan keamanan makanan yang disajikan. Namun dalam praktiknya, teknologi yang mendukung pemantauan \textit{real-time} terhadap kesegaran makanan belum banyak diimplementasikan, khususnya pada fase \textit{post-dining} di mana risiko \textit{spoilage} meningkat.
+
+Perkembangan teknologi sensor gas dan \textit{machine learning} membuka peluang baru untuk mendeteksi gas volatil seperti ammonia, hydrogen sulfide, methane, dan VOC lain yang menjadi indikator kuat pembusukan makanan. Pendekatan ini menawarkan cara \textit{non-destructive}, objektif, dan \textit{real-time} untuk menilai kondisi makanan. Dengan mengintegrasikan sistem pendeteksi berbasis sensor MQ dalam ekosistem Smart Canteen, penilaian kesegaran makanan dapat dilakukan secara otomatis untuk mendukung keputusan seperti menyimpan, mendonasikan, atau membuang makanan, sehingga keamanan pangan terjamin dan \textit{food waste} dapat ditekan.
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
@@ -47,15 +50,17 @@ Tujuan penelitian ini adalah:
 Penelitian ini memiliki batasan-batasan sebagai berikut:
 
 \begin{enumerate}
-\item	Penelitian ini hanya berfokus pada klasifikasi dua kondisi makanan, yaitu \textit{fresh} dan \textit{spoiled}, tanpa mencakup kategori \textit{intermediate} seperti \textit{almost spoiled} atau penilaian tingkat kerusakan.
+\item	Penelitian ini hanya berfokus pada klasifikasi dua kondisi makanan, yaitu \textit{fresh} dan \textit{spoiled}, tanpa mencakup kategori \textit{intermediate} seperti \textit{almost spoiled} atau penilaian tingkat kerusakan yang lebih terperinci.
 
-\item	Data yang digunakan berasal dari pembacaan \textit{multi-gas sensor} MQ (MQ8, MQ135, MQ4, MQ9, MQ2, MQ3) dalam bentuk nilai \textit{analog} digital, tanpa melibatkan data visual, aroma manusia, suhu, kelembapan, atau sensor IoT tambahan lainnya.
+\item	Data yang digunakan berasal dari pembacaan \textit{multi-gas sensor} MQ (MQ8, MQ135, MQ4, MQ9, MQ2, MQ3) dalam bentuk nilai analog dan digital, tanpa melibatkan data visual, aroma manusia, suhu, kelembapan, atau sensor IoT tambahan lainnya.
 
-\item	Model \textit{machine learning} yang dibangun hanya bertujuan mendeteksi kondisi makanan berdasarkan pola gas, tanpa mencakup penjelasan penyebab kerusakan, prediksi waktu kadaluarsa, atau estimasi \textit{shelf-life}.
+\item	Ruang lingkup sampel pangan dibatasi pada empat komoditas, yaitu daging ayam mentah, daging ikan mentah, buah pisang, dan buah apel. Pemilihan ini dilakukan karena komoditas tersebut umum dijual di kantin dan menghasilkan pola VOC yang dapat dideteksi oleh sensor MQ.
 
-\item	Integrasi sistem dengan \textit{workflow} Smart Canteen dibatasi pada rekomendasi keputusan (\textit{storing}, \textit{donation}, \textit{disposal}), tanpa mencakup implementasi penuh pada sistem operasional atau perangkat keras kantin.
+\item	Model \textit{machine learning} yang dibangun hanya bertujuan mendeteksi kondisi makanan berdasarkan pola gas, tanpa mencakup penjelasan penyebab kerusakan, prediksi waktu kedaluwarsa, atau estimasi \textit{shelf-life}.
 
-\item	Pengujian sistem dilakukan menggunakan \textit{dataset} hasil eksperimen sensor yang tersedia, tanpa melakukan pengujian skala besar pada kondisi kantin nyata ataupun \textit{dataset} resmi dari FAO.
+\item	Integrasi sistem dengan \textit{workflow} Smart Canteen dibatasi pada rekomendasi keputusan (\textit{storing}, \textit{donation}, \textit{disposal}), tanpa mencakup implementasi penuh seperti sistem otomasi perangkat keras kantin.
+
+\item	Pengujian sistem dilakukan menggunakan \textit{dataset} hasil eksperimen sendiri, yaitu data gas VOC yang dikumpulkan secara langsung selama proses pembusukan empat komoditas tersebut. Penelitian ini tidak menggunakan \textit{dataset} resmi, termasuk \textit{dataset} dari FAO atau sumber publik lainnya, karena belum tersedia \textit{dataset} standar untuk pola emisi VOC pada makanan.
 \end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---

@@ -1,0 +1,29 @@
+\begin{longtable}{|p{1.5cm}|p{4cm}|p{8cm}|}
+\caption{Kebutuhan Nonfungsional Sistem}\label{tbl:kebutuhan-nonfungsional} \\
+\hline
+\textbf{ID} & \textbf{Aspek Kualitas} & \textbf{Deskripsi} \\
+\hline
+\endfirsthead
+
+\caption{Kebutuhan Nonfungsional Sistem (lanjutan)} \\
+\hline
+\textbf{ID} & \textbf{Aspek Kualitas} & \textbf{Deskripsi} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\textit{Bersambung ke halaman berikutnya}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+NFR01 & Keandalan Prediksi & Model klasifikasi harus memiliki akurasi yang memadai (> 85\%) dengan fokus pada penurunan \textit{false negative} (makanan rusak tidak terdeteksi). \\
+\hline
+NFR02 & Waktu Respons & Sistem harus mampu menghasilkan prediksi dalam waktu < 2 detik per sampel untuk penggunaan operasional \textit{real-time} pada kantin. \\
+\hline
+NFR03 & Skalabilitas & Sistem mampu menangani input dari beberapa sensor sekaligus dan dapat diperluas untuk jenis makanan baru tanpa perubahan besar pada arsitektur. \\
+\hline
+NFR04 & Kemudahan Implementasi & Sistem harus berbasis \textit{low-cost hardware} (Arduino + MQ sensors) sehingga dapat diimplementasikan pada kantin sekolah/kampus tanpa biaya tinggi. \\
+\hline
+\end{longtable}
